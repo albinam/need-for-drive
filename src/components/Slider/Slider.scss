@@ -1,0 +1,105 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+
+.container-slider {
+  position: relative;
+  width: 688px;
+
+
+  .gradient:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  }
+
+  .slide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+    width: 100%;
+    height: 100%;;
+    box-sizing: border-box;
+
+    &_content {
+      position: absolute;
+      top: 237px;
+      left: 97px;
+      right: 91px;
+      z-index: 1;
+
+      &_title {
+        color: $color-main-white;
+        font-family: $fontMedium;
+        font-size: 40px;
+        line-height: 47px;
+        margin-bottom: 8px;
+      }
+
+      &_subtitle{
+        font-family: $fontLight;
+        font-size: 24px;
+        line-height: 24px;
+        height: 100%;
+        color: $color-gray-light;
+        margin-bottom: 32px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+  .active {
+    opacity: 1;
+  }
+}
+
+.btn-slide {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 64px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    background: rgba(14, 194, 97, 0.2);
+  }
+}
+
+.next {
+  right: 0;
+}
+
+.container-dots {
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: $color-main-white;
+  }
+
+  .active {
+    background: $color-accent;
+  }
+}
