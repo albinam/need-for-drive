@@ -1,23 +1,33 @@
 {
   "files": {
-    "main.css": "/need-for-drive/static/css/main.a617e044.chunk.css",
-    "main.js": "/need-for-drive/static/js/main.fc4d462d.chunk.js",
-    "main.js.map": "/need-for-drive/static/js/main.fc4d462d.chunk.js.map",
-    "runtime-main.js": "/need-for-drive/static/js/runtime-main.26530aa3.js",
-    "runtime-main.js.map": "/need-for-drive/static/js/runtime-main.26530aa3.js.map",
-    "static/js/2.4a5ea963.chunk.js": "/need-for-drive/static/js/2.4a5ea963.chunk.js",
-    "static/js/2.4a5ea963.chunk.js.map": "/need-for-drive/static/js/2.4a5ea963.chunk.js.map",
-    "static/js/3.1fe45c99.chunk.js": "/need-for-drive/static/js/3.1fe45c99.chunk.js",
-    "static/js/3.1fe45c99.chunk.js.map": "/need-for-drive/static/js/3.1fe45c99.chunk.js.map",
+    "main.css": "/need-for-drive/static/css/main.e631212f.chunk.css",
+    "main.js": "/need-for-drive/static/js/main.d72c141a.chunk.js",
+    "main.js.map": "/need-for-drive/static/js/main.d72c141a.chunk.js.map",
+    "runtime-main.js": "/need-for-drive/static/js/runtime-main.936d6a02.js",
+    "runtime-main.js.map": "/need-for-drive/static/js/runtime-main.936d6a02.js.map",
+    "static/js/2.45af3b51.chunk.js": "/need-for-drive/static/js/2.45af3b51.chunk.js",
+    "static/js/2.45af3b51.chunk.js.map": "/need-for-drive/static/js/2.45af3b51.chunk.js.map",
+    "static/js/3.936ce1a6.chunk.js": "/need-for-drive/static/js/3.936ce1a6.chunk.js",
+    "static/js/3.936ce1a6.chunk.js.map": "/need-for-drive/static/js/3.936ce1a6.chunk.js.map",
     "index.html": "/need-for-drive/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/need-for-drive/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.4a5ea963.chunk.js.LICENSE.txt": "/need-for-drive/static/js/2.4a5ea963.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/need-for-drive/static/media/logo.6ce24c58.svg"
+    "static/css/main.e631212f.chunk.css.map": "/need-for-drive/static/css/main.e631212f.chunk.css.map",
+    "static/js/2.45af3b51.chunk.js.LICENSE.txt": "/need-for-drive/static/js/2.45af3b51.chunk.js.LICENSE.txt",
+    "static/media/LeftArrow.dd0226d1.svg": "/need-for-drive/static/media/LeftArrow.dd0226d1.svg",
+    "static/media/RightArrow.9d87137d.svg": "/need-for-drive/static/media/RightArrow.9d87137d.svg",
+    "static/media/Slider.scss": "/need-for-drive/static/media/Roboto-Regular.a8d6ac03.ttf",
+    "static/media/city.dd9d4bed.svg": "/need-for-drive/static/media/city.dd9d4bed.svg",
+    "static/media/facebook.c1876cc3.svg": "/need-for-drive/static/media/facebook.c1876cc3.svg",
+    "static/media/instagram.49e1648a.svg": "/need-for-drive/static/media/instagram.49e1648a.svg",
+    "static/media/slide1.27a4ad69.png": "/need-for-drive/static/media/slide1.27a4ad69.png",
+    "static/media/slide2.d5a7af93.png": "/need-for-drive/static/media/slide2.d5a7af93.png",
+    "static/media/slide3.4f3163f1.png": "/need-for-drive/static/media/slide3.4f3163f1.png",
+    "static/media/slide4.55a575ee.png": "/need-for-drive/static/media/slide4.55a575ee.png",
+    "static/media/telegram.e8137bbe.svg": "/need-for-drive/static/media/telegram.e8137bbe.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.26530aa3.js",
-    "static/js/2.4a5ea963.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.fc4d462d.chunk.js"
+    "static/js/runtime-main.936d6a02.js",
+    "static/js/2.45af3b51.chunk.js",
+    "static/css/main.e631212f.chunk.css",
+    "static/js/main.d72c141a.chunk.js"
   ]
 }
