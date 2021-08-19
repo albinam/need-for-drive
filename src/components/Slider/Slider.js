@@ -40,7 +40,7 @@ function Slider() {
                     >
                         <div className="gradient">
                             <img
-                                src={obj.img}
+                                src={obj.img} alt ="slider image"
                             />
                         </div>
                         <div className="slide_content">

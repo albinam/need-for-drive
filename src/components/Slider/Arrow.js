@@ -7,7 +7,7 @@ function Arrow({direction, moveSlide}) {
             onClick={moveSlide}
             className={direction === "next" ? "btn-slide next" : "btn-slide prev"}
         >
-            <img src={direction === "next" ? rightArrow : leftArrow}/>
+            <img src={direction === "next" ? rightArrow : leftArrow} alr="arrow"/>
         </button>
     );
 }
