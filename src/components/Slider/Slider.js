@@ -38,7 +38,6 @@ function Slider() {
                         key={obj.id}
                         className={classNames("slide", slideIndex === index + 1 ? "active" : null)}
                     >
-
                         <div className="gradient">
                             <img
                                 src={obj.img}
@@ -51,7 +50,6 @@ function Slider() {
                         </div>
 
                     </div>
-
                 )
             })}
             <Arrow moveSlide={nextSlide} direction={"next"}/>

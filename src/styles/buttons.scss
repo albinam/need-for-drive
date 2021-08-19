@@ -1,7 +1,7 @@
 @import "src/styles/colors";
 @import "src/styles/vars";
 
-.content_button{
+.content_button {
   width: 250px;
   height: 48px;
   font-family: $fontMedium;
@@ -13,98 +13,108 @@
   border: none;
   border-radius: 8px;
 
-  &:hover{
+  &:hover {
     background: linear-gradient(90deg, darken($color-book-button-start, 10%) 2.61%, darken($color-book-button-end, 10%) 112.6%);
     background-blend-mode: darken;
   }
-  &:active{
+
+  &:active {
     background: linear-gradient(90deg, darken($color-book-button-start, 20%) 2.61%, darken($color-book-button-end, 20%) 112.6%);
     background-blend-mode: darken;
   }
 }
 
-.slider-button{
+@media (max-width: $mobileSizeW) and (max-height: $mobileSizeH) {
+  .content_button {
+    width: 100vw;
+    height: 50px;
+    border-radius: 0;
+    margin-left: -17.5px;
+  }
+}
+
+.slider-button {
   width: 164px;
   height: 48px;
   font-family: $fontMedium;
   line-height: 21px;
   font-size: 18px;
   text-align: center;
-  border:none;
+  border: none;
   border-radius: 4px;
   color: $color-main-white;
   cursor: pointer;
 
-  &.green{
+  &.green {
     background: linear-gradient(90deg, $color-btn-slide1-start 0%, $color-btn-slide1-end 100%);
     background-blend-mode: darken;
 
-    &:hover{
+    &:hover {
       background: linear-gradient(90deg, darken($color-btn-slide1-start, 10%) 0%, darken($color-btn-slide1-end, 10%) 100%);
       background-blend-mode: darken;
     }
 
-    &:active{
+    &:active {
       background: linear-gradient(90deg, darken($color-btn-slide1-start, 20%) 0%, darken($color-btn-slide1-end, 20%) 100%);
       background-blend-mode: darken;
     }
   }
 
-  &.green{
+  &.green {
     background: linear-gradient(90deg, $color-btn-slide1-start 0%, $color-btn-slide1-end 100%);
     background-blend-mode: darken;
 
-    &:hover{
+    &:hover {
       background: linear-gradient(90deg, darken($color-btn-slide1-start, 10%) 0%, darken($color-btn-slide1-end, 10%) 100%);
       background-blend-mode: darken;
     }
 
-    &:active{
+    &:active {
       background: linear-gradient(90deg, darken($color-btn-slide1-start, 20%) 0%, darken($color-btn-slide1-end, 20%) 100%);
       background-blend-mode: darken;
     }
   }
 
-  &.blue{
+  &.blue {
     background: linear-gradient(90deg, $color-btn-slide2-start 0%, $color-btn-slide2-end 100%);
     background-blend-mode: darken;
 
-    &:hover{
+    &:hover {
       background: linear-gradient(90deg, darken($color-btn-slide2-start, 10%) 0%, darken($color-btn-slide2-end, 10%) 100%);
       background-blend-mode: darken;
     }
 
-    &:active{
+    &:active {
       background: linear-gradient(90deg, darken($color-btn-slide2-start, 20%) 0%, darken($color-btn-slide2-end, 20%) 100%);
       background-blend-mode: darken;
     }
   }
 
-  &.pink{
+  &.pink {
     background: linear-gradient(90deg, $color-btn-slide3-start 0%, $color-btn-slide3-end 100%);
     background-blend-mode: darken;
 
-    &:hover{
+    &:hover {
       background: linear-gradient(90deg, darken($color-btn-slide3-start, 10%) 0%, darken($color-btn-slide3-end, 10%) 100%);
       background-blend-mode: darken;
     }
 
-    &:active{
+    &:active {
       background: linear-gradient(90deg, darken($color-btn-slide3-start, 20%) 0%, darken($color-btn-slide3-end, 20%) 100%);
       background-blend-mode: darken;
     }
   }
 
-  &.purple{
+  &.purple {
     background: linear-gradient(90deg, $color-btn-slide4-start 0%, $color-btn-slide4-end 100%);
     background-blend-mode: darken;
 
-    &:hover{
+    &:hover {
       background: linear-gradient(90deg, darken($color-btn-slide4-start, 10%) 0%, darken($color-btn-slide4-end, 10%) 100%);
       background-blend-mode: darken;
     }
 
-    &:active{
+    &:active {
       background: linear-gradient(90deg, darken($color-btn-slide4-start, 20%) 0%, darken($color-btn-slide4-end, 20%) 100%);
       background-blend-mode: darken;
     }

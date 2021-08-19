@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import classNames from 'classnames';
 import './Menu.scss'
-import { ReactComponent as Telegram} from '../../assets/images/icons/telegram.svg'
-import { ReactComponent as Facebook } from '../../assets/images/icons/facebook.svg'
-import { ReactComponent as Instagram} from '../../assets/images/icons/instagram.svg'
+import {ReactComponent as Telegram} from '../../assets/images/icons/telegram.svg'
+import {ReactComponent as Facebook} from '../../assets/images/icons/facebook.svg'
+import {ReactComponent as Instagram} from '../../assets/images/icons/instagram.svg'
 
 function Menu() {
     const menuItems = ['Парковка', 'Страховка', 'Бензин', 'Обслуживание'];
@@ -35,13 +35,13 @@ function Menu() {
                         href='#'
                         className={classNames("hamburger-menu_link", openedMenu)}
                     >{item}</a>)}
-                <div   className={classNames("hamburger-menu_icons", openedMenu)}>
-                {icons.map(icon =>
-                    <a
-                        href='#'
-                        className={classNames("hamburger-menu_icon", openedMenu)}
-                    > {icon}
-                    </a>)}
+                <div className={classNames("hamburger-menu_icons", openedMenu)}>
+                    {icons.map(icon =>
+                        <a
+                            href='#'
+                            className={classNames("hamburger-menu_icon", openedMenu)}
+                        > {icon}
+                        </a>)}
                 </div>
             </div>
         </div>
