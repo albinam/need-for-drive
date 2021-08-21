@@ -13,7 +13,7 @@ function Menu() {
     const openedMenu = menuState ? "open" : null;
 
     return (
-        <div className='hamburger-menu'>
+        <div className={classNames("hamburger-menu", openedMenu)}>
             <div
                 className={classNames("hamburger-menu_button", openedMenu)}
                 onClick={() => setMenuState(!openedMenu)}

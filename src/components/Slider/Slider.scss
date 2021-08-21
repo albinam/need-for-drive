@@ -51,9 +51,9 @@
       }
     }
 
-    img {
-      width: 100%;
-      height: 100%;
+    img{
+      object-fit:cover;
+      height: 100vh;
     }
   }
   .active {
@@ -123,10 +123,6 @@
           line-height: 22px;
           margin-bottom: 32px;
         }
-      }
-      img{
-        object-fit:cover;
-        height: 100vh;
       }
     }
 

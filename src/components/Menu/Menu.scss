@@ -161,7 +161,7 @@
 
     &_full {
       &.open {
-        width: 768px;
+        flex:2;
         background: $color-menu-back 614px;
       }
     }
@@ -172,7 +172,7 @@
   }
 }
 
-@media (max-width: $mobileSizeW) and (max-height: $mobileSizeH) {
+@media (max-width: $mobileSizeW) {
   .hamburger-menu {
     width: 50px;
     background-color: $color-main-white;
