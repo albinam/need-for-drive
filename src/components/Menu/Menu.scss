@@ -11,7 +11,7 @@
   cursor: default;
 
   &_button {
-    padding: 40px;
+    padding: 32px 16px;
     width: 32px;
     height: 32px;
     display: flex;
@@ -93,7 +93,7 @@
       height: 100%;
       opacity: 1;
       z-index: 2;
-      background: linear-gradient(to right, $color-menu-back  calc((100vw - 64px)/2 + 65px), $color-menu-back-transparent  calc((100vw - 64px)/2));
+      background: linear-gradient(to right, $color-menu-back calc((100vw - 64px) / 2 + 65px), $color-menu-back-transparent calc((100vw - 64px) / 2));
       padding: 307px 128px 100px;
       display: flex;
       flex-direction: column;
@@ -151,7 +151,7 @@
   .hamburger-menu {
     &_full {
       &.open {
-        background: linear-gradient(to right, $color-menu-back calc((100vw/7)*4 + 33px), $color-menu-back-transparent calc((100vw/7)*4));
+        background: linear-gradient(to right, $color-menu-back calc((100vw / 7) * 4 + 33px), $color-menu-back-transparent calc((100vw / 7) * 4));
       }
     }
   }
@@ -160,6 +160,15 @@
 @media (max-width: $tabletSize) {
   .hamburger-menu {
     width: 86px;
+
+    &_button {
+      padding: 29px 22px;
+      width: 42px;
+
+      div {
+        width: 32px;
+      }
+    }
 
     &_full {
       &.open {
@@ -184,11 +193,12 @@
       height: 33.5px;
 
       div {
+        width: 24px;
         background-color: $color-main;
       }
 
       &.open {
-        .one, .three{
+        .one, .three {
           background-color: $color-main-white;
         }
       }
