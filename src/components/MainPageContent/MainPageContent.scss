@@ -2,7 +2,9 @@
 @import "src/styles/vars";
 
 .content-container {
-  width: calc(100vw - 688px - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {

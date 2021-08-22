@@ -1,5 +1,4 @@
 import rightArrow from '../../assets/images/slider/RightArrow.svg';
-import leftArrow from '../../assets/images/slider/LeftArrow.svg';
 
 function Arrow({direction, moveSlide}) {
     return (
@@ -7,7 +6,7 @@ function Arrow({direction, moveSlide}) {
             onClick={moveSlide}
             className={direction === "next" ? "btn-slide next" : "btn-slide prev"}
         >
-            <img src={direction === "next" ? rightArrow : leftArrow} alr="arrow"/>
+            <img src={rightArrow}  className={direction === "next" ? "arrow_right" : "arrow_left"} alt="arrow"/>
         </button>
     );
 }
