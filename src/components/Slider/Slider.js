@@ -32,21 +32,19 @@ function Slider() {
     return (
         <div className="container-slider">
 
-                    <div
-                        key={dataSlider[slideIndex].id}
-                        className="slide"
-                    >
-                        <div className="gradient">
-                            <img
-                                src={dataSlider[slideIndex].img} alt ="slider image"
-                            />
-                        </div>
-                        <div className="slide_content">
-                            <div className="slide_content_title">{dataSlider[slideIndex].title}</div>
-                            <p className="slide_content_subtitle">{dataSlider[slideIndex].subtitle}</p>
-                            <button className={classNames("slider-button", dataSlider[slideIndex].color)}>Подробнее</button>
-                        </div>
-                    </div>
+            <div
+                key={dataSlider[slideIndex].id}
+                className="slide"
+            >
+                <img
+                    src={dataSlider[slideIndex].img} alt="slider image"
+                />
+                <div className="slide_content">
+                    <div className="slide_content_title">{dataSlider[slideIndex].title}</div>
+                    <p className="slide_content_subtitle">{dataSlider[slideIndex].subtitle}</p>
+                    <button className={classNames("slider-button", dataSlider[slideIndex].color)}>Подробнее</button>
+                </div>
+            </div>
             <Arrow moveSlide={nextSlide} direction={"next"}/>
             <Arrow moveSlide={prevSlide} direction={"prev"}/>
             <div className="container-dots">
