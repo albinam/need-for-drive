@@ -5,9 +5,10 @@ import {ReactComponent as Telegram} from '../../assets/images/icons/telegram.svg
 import {ReactComponent as Facebook} from '../../assets/images/icons/facebook.svg'
 import {ReactComponent as Instagram} from '../../assets/images/icons/instagram.svg'
 
+const menuItems = ['Парковка', 'Страховка', 'Бензин', 'Обслуживание'];
+const icons = [<Telegram/>, <Facebook/>, <Instagram/>];
+
 function Menu() {
-    const menuItems = ['Парковка', 'Страховка', 'Бензин', 'Обслуживание'];
-    const icons = [<Telegram/>, <Facebook/>, <Instagram/>];
     const [langState, setLang] = useState("Рус");
     const [menuState, setMenuState] = useState(false);
     const openedMenu = menuState ? "open" : null;
