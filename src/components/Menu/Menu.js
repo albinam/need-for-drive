@@ -25,7 +25,7 @@ function Menu() {
             </div>
             <button
                 className={classNames("hamburger-menu_lang", openedMenu)}
-                onClick={() => setLang(langState == "Eng" ? "Рус" : "Eng")}
+                onClick={() => setLang(langState === "Eng" ? "Рус" : "Eng")}
             >{langState}
             </button>
 
