@@ -7,21 +7,21 @@ import classNames from 'classnames';
 
 function Slider() {
 
-    const [slideIndex, setSlideIndex] = useState(1)
+    const [slideIndex, setSlideIndex] = useState(0)
 
     const nextSlide = () => {
-        if (slideIndex !== dataSlider.length) {
+        if (slideIndex === 3) {
+            setSlideIndex(0)
+        } else {
             setSlideIndex(slideIndex + 1)
-        } else if (slideIndex === dataSlider.length) {
-            setSlideIndex(1)
         }
     }
 
     const prevSlide = () => {
-        if (slideIndex !== 1) {
+        if (slideIndex === 0) {
+            setSlideIndex(3)
+        } else {
             setSlideIndex(slideIndex - 1)
-        } else if (slideIndex === 1) {
-            setSlideIndex(dataSlider.length)
         }
     }
 
@@ -31,34 +31,29 @@ function Slider() {
 
     return (
         <div className="container-slider">
-            {dataSlider.map((obj, index) => {
-                return (
 
                     <div
-                        key={obj.id}
-                        className={classNames("slide", slideIndex === index + 1 ? "active" : null)}
+                        key={dataSlider[slideIndex].id}
+                        className="slide"
                     >
                         <div className="gradient">
                             <img
-                                src={obj.img} alt ="slider image"
+                                src={dataSlider[slideIndex].img} alt ="slider image"
                             />
                         </div>
                         <div className="slide_content">
-                            <div className="slide_content_title">{obj.title}</div>
-                            <p className="slide_content_subtitle">{obj.subtitle}</p>
-                            <button className={classNames("slider-button", obj.color)}>Подробнее</button>
+                            <div className="slide_content_title">{dataSlider[slideIndex].title}</div>
+                            <p className="slide_content_subtitle">{dataSlider[slideIndex].subtitle}</p>
+                            <button className={classNames("slider-button", dataSlider[slideIndex].color)}>Подробнее</button>
                         </div>
-
                     </div>
-                )
-            })}
             <Arrow moveSlide={nextSlide} direction={"next"}/>
             <Arrow moveSlide={prevSlide} direction={"prev"}/>
             <div className="container-dots">
                 {Array.from({length: dataSlider.length}).map((item, index) => (
                     <div
-                        onClick={() => moveDot(index + 1)}
-                        className={classNames("dot", slideIndex === index + 1 ? "active" : null)}
+                        onClick={() => moveDot(index)}
+                        className={classNames("dot", slideIndex === index ? "active" : null)}
                     />
                 ))}
             </div>
