@@ -12,6 +12,7 @@
   background-blend-mode: darken;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 
   &:hover {
     background: linear-gradient(90deg, darken($color-book-button-start, 10%) 2.61%, darken($color-book-button-end, 10%) 112.6%);

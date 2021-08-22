@@ -19,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     z-index: 3;
+    cursor: pointer;
 
     div {
       position: relative;
@@ -54,6 +55,7 @@
 
   &_lang {
     background-color: transparent;
+    cursor: pointer;
     margin-top: auto;
     color: $color-accent;
     width: 48px;
@@ -91,7 +93,7 @@
       height: 100%;
       opacity: 1;
       z-index: 2;
-      background: linear-gradient(to right, $color-menu-back 752px, $color-menu-back-transparent calc(100% - 752px));
+      background: linear-gradient(to right, $color-menu-back  calc((100vw - 64px)/2 + 65px), $color-menu-back-transparent  calc((100vw - 64px)/2));
       padding: 307px 128px 100px;
       display: flex;
       flex-direction: column;
@@ -149,7 +151,7 @@
   .hamburger-menu {
     &_full {
       &.open {
-        background: linear-gradient(to right, $color-menu-back 614px, $color-menu-back-transparent calc(100% - 614px));
+        background: linear-gradient(to right, $color-menu-back calc((100vw/7)*4 + 33px), $color-menu-back-transparent calc((100vw/7)*4));
       }
     }
   }
@@ -161,8 +163,7 @@
 
     &_full {
       &.open {
-        flex:2;
-        background: $color-menu-back 614px;
+        background: $color-menu-back;
       }
     }
 
