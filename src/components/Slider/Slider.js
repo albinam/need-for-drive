@@ -31,7 +31,6 @@ function Slider() {
 
     return (
         <div className="container-slider">
-
             <div
                 key={dataSlider[slideIndex].id}
                 className="slide"
@@ -50,6 +49,7 @@ function Slider() {
             <div className="container-dots">
                 {Array.from({length: dataSlider.length}).map((item, index) => (
                     <div
+                        key={index}
                         onClick={() => moveDot(index)}
                         className={classNames("dot", slideIndex === index ? "active" : null)}
                     />

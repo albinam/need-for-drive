@@ -6,7 +6,7 @@ import {ReactComponent as Facebook} from '../../assets/images/icons/facebook.svg
 import {ReactComponent as Instagram} from '../../assets/images/icons/instagram.svg'
 
 const menuItems = ['Парковка', 'Страховка', 'Бензин', 'Обслуживание'];
-const icons = [<Telegram/>, <Facebook/>, <Instagram/>];
+const icons = [<Telegram key ="telegram"/>, <Facebook key ="facebook"/>, <Instagram key="instagram"/>];
 
 function Menu() {
     const [langState, setLang] = useState("Рус");
@@ -28,17 +28,18 @@ function Menu() {
                 onClick={() => setLang(langState ==="Eng" ? "Рус" : "Eng")}
             >{langState}
             </button>
-
             <div
                 className={classNames("hamburger-menu_full", openedMenu)}>
                 {menuItems.map(item =>
                     <a
+                        key={item}
                         href='#'
                         className={classNames("hamburger-menu_link", openedMenu)}
                     >{item}</a>)}
                 <div className={classNames("hamburger-menu_icons", openedMenu)}>
                     {icons.map(icon =>
                         <a
+                            key={icon}
                             href='#'
                             className={classNames("hamburger-menu_icon", openedMenu)}
                         > {icon}
@@ -47,7 +48,6 @@ function Menu() {
             </div>
         </div>
     );
-
 }
 
 export default Menu;

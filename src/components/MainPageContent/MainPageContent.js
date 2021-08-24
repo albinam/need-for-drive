@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './MainPageContent.scss';
 import '../../styles/buttons.scss'
 import {ReactComponent as CityLogo} from '../../assets/images/icons/city.svg';
 
 function MainPageContent() {
 
-    const [city, setCity] = useState("Ульяновск");
+    const city = "Ульяновск";
 
     return (
         <div className="content-container">
