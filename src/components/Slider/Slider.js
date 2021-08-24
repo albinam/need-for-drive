@@ -31,19 +31,26 @@ function Slider() {
 
     return (
         <div className="container-slider">
-            <div
-                key={dataSlider[slideIndex].id}
-                className="slide"
-            >
-                <img
-                    src={dataSlider[slideIndex].img} alt="slider image"
-                />
-                <div className="slide_content">
-                    <div className="slide_content_title">{dataSlider[slideIndex].title}</div>
-                    <p className="slide_content_subtitle">{dataSlider[slideIndex].subtitle}</p>
-                    <button className={classNames("slider-button", dataSlider[slideIndex].color)}>Подробнее</button>
-                </div>
-            </div>
+            {dataSlider.map((obj, index) => {
+                return (
+                    <div
+                        key={obj.id}
+                        className={classNames("slide", slideIndex === index ? "active" : null)}
+                    >
+                        <div className="gradient">
+                            <img
+                                src={obj.img}
+                            />
+                        </div>
+                        <div className="slide_content">
+                            <div className="slide_content_title">{obj.title}</div>
+                            <p className="slide_content_subtitle">{obj.subtitle}</p>
+                            <button className={classNames("slider-button", obj.color)}>Подробнее</button>
+                        </div>
+
+                    </div>
+                )
+            })}
             <Arrow moveSlide={nextSlide} direction={"next"}/>
             <Arrow moveSlide={prevSlide} direction={"prev"}/>
             <div className="container-dots">
