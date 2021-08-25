@@ -206,8 +206,8 @@
 
     &_full {
       &.open {
-        width: 320px;
-        background: $color-menu-back 320px;
+        width: 100%;
+        background: $color-menu-back;
         padding: 80px 110px 0 28px;
       }
     }

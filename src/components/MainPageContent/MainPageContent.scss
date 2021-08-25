@@ -124,13 +124,22 @@
   .content-container {
     width: 100vw;
   }
+
   .header {
     padding: 16px 16px 0 62px;
-    flex-flow: column nowrap;
+    flex-direction: column;
+
+    &_title{
+      margin-left: auto;
+    }
 
     &_city {
       height: 18px;
-      justify-content: flex-end;
+      margin-top: 8px;
+
+      &_logo{
+        margin-left: auto;
+      }
     }
   }
   .content {
@@ -159,18 +168,18 @@
     justify-content: flex-end;
     margin-left: -50px;
     height: 72px;
-    padding: 0;
+    padding-right: 16px;
     background-color: $color-main;
 
     &_copyright {
       color: $color-gray-light;
       margin-top: 8px;
-      margin-left: 131px;
+      margin-left: auto;
     }
 
     &_phone {
       color: $color-accent;
-      margin-left: 201px;
+      margin-left: auto;
       margin-top: 16px;
 
       &:hover {
