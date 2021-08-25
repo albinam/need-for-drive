@@ -1,0 +1,28 @@
+@import '../../components/MainPageContent/MainPageContent';
+.main {
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+
+  .content-container {
+    flex: 1;
+  }
+
+  .container-slider {
+    flex: 1;
+  }
+}
+@media (max-width: $desktopMinSize) {
+  .main {
+
+    .content-container {
+      flex: 4;
+    }
+
+    .container-slider {
+      flex: 3;
+    }
+  }
+}
+
+
