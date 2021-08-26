@@ -10,7 +10,8 @@ function LocationForm() {
                     Город
                 </div>
                 <div className="location_form_name">
-                    <input type="text" className="location_form_input" placeholder="Начните вводить город ..."/>
+                    <input type="text" className="location_form_input"
+                           placeholder="Начните вводить город ..."/>
                     <a className="location_form_button">&#215;</a>
                 </div>
             </div>
@@ -19,7 +20,8 @@ function LocationForm() {
                     Пункт выдачи
                 </div>
                 <div className="location_form_name">
-                    <input className="location_form_input" placeholder="Начните вводить пункт ..."/>
+                    <input type="text" className="location_form_input"
+                           placeholder="Начните вводить пункт ..."/>
                     <span className="location_form_button">&#215;</span>
                 </div>
             </div>

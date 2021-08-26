@@ -9,6 +9,15 @@
     width: calc(100vw - 64px);
   }
 
+  &_tab{
+    display: flex;
+    flex-direction: row;
+
+    &_location{
+      flex-direction: column;
+    }
+  }
+
   .header{
     width: calc(100vw - 196px);
   }
