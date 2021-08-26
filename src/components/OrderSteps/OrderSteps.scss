@@ -7,7 +7,7 @@
   display: flex;
   border-top: 1px solid $color-gray-light;
   border-bottom: 1px solid $color-gray-light;
-  width: 100vw;
+  width: calc(100vw - 128px);
 
   a {
     font-family: $fontBold;

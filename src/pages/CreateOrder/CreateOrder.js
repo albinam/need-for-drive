@@ -3,6 +3,8 @@ import Menu from "../../components/Menu/Menu";
 import Header from "../../components/Header/Header";
 import "./CreateOrder.scss"
 import OrderSteps from "../../components/OrderSteps/OrderSteps";
+import LocationForm from "../../components/Location/LocationForm/LocationForm";
+import LocationMap from "../../components/Location/LocationMap/LocationMap";
 
 class CreateOrder extends Component {
     render() {
@@ -12,6 +14,8 @@ class CreateOrder extends Component {
                 <div className="order_page_content">
                     <Header/>
                     <OrderSteps/>
+                    <LocationForm/>
+                    <LocationMap/>
                 </div>
             </div>
         );

@@ -27,5 +27,4 @@ function MainPageContent() {
     );
 }
 
-
 export default MainPageContent;
