@@ -1,0 +1,15 @@
+@import '../../components/Header/Header';
+.order_page {
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+
+
+  &_content{
+    flex-direction: column;
+  }
+
+  .header{
+    flex:1;
+  }
+}

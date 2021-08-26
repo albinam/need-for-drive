@@ -1,0 +1,28 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.steps {
+  padding: 8px 0 7px 64px;
+  margin-top: 32px;
+  display: flex;
+  border-top: 1px solid $color-gray-light;
+  border-bottom: 1px solid $color-gray-light;
+  width: 100vw;
+
+  a {
+    font-family: $fontBold;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-gray-dark;
+    margin-right: 38px;
+    position: relative;
+
+    &:not(:first-child)::before {
+      content: '\25BA';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: calc(100% + 16px);
+    }
+  }
+}
