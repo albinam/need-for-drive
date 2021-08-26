@@ -1,0 +1,32 @@
+@import "../../../styles/colors";
+@import "../../../styles/vars";
+
+.location_form {
+  margin-left: 64px;
+  margin-top: 32px;
+  font-family: $fontLight;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-main;
+
+  &_label {
+    text-align: right;
+    width: 91px;
+  }
+
+  &_input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $color-gray-dark;
+    margin-bottom: 16px;
+  }
+
+  &_line {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_name {
+    margin-left: 16px;
+  }
+}

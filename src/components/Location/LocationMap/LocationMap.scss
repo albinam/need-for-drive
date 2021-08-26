@@ -1,0 +1,20 @@
+@import "../../../styles/colors";
+@import "../../../styles/vars";
+
+.location-map {
+  margin-top: 29px;
+  margin-left: 64px;
+
+  &_label{
+    font-family: $fontLight;
+    font-size: 14px;
+    line-height: 16px;
+    color:$color-main;
+  }
+
+  img{
+    width: 736px;
+    height: 352px;
+    margin-top: 16px;
+  }
+}
