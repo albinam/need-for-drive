@@ -3,23 +3,34 @@
 
 .location-map {
   margin-top: 29px;
-  margin-left: 64px;
 
-  &_label{
+  &_label {
     font-family: $fontLight;
     font-size: 14px;
     line-height: 16px;
-    color:$color-main;
+    color: $color-main;
   }
 
-  img{
+  img {
     width: 736px;
     height: 352px;
     margin-top: 16px;
   }
 }
+
 @media (max-width: $desktopMinSize) {
   .location-map {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .location-map {
+    padding-right: 16px;
+
     img {
       width: 100%;
       object-fit: cover;

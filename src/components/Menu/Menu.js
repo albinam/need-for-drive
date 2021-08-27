@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import classNames from 'classnames';
 import './Menu.scss'
 import {ReactComponent as Telegram} from '../../assets/images/icons/telegram.svg'
@@ -12,6 +12,15 @@ function Menu() {
     const [langState, setLang] = useState("Рус");
     const [menuState, setMenuState] = useState(false);
     const openedMenu = menuState ? "open" : null;
+
+    useEffect(() => {
+        if(openedMenu){
+            document.body.style.overflow='hidden';
+        }
+        else{
+            document.body.style.overflow='auto';
+        }
+    });
 
     return (
         <div className={classNames("hamburger-menu", openedMenu)}>

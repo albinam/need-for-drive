@@ -26,3 +26,34 @@
     }
   }
 }
+
+@media (max-width: $desktopMinSize) {
+  .steps {
+    padding: 8px 0 7px 32px;
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .steps {
+    margin-top: 48px;
+    padding: 0 0 16px 0;
+    width: 100vw;
+    margin-left: -50px;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+
+    a {
+      margin-right: 0;
+      margin-top: 16px;
+
+      &:not(:first-child)::before {
+        content: '\25BC';
+        top:-16px;
+        align-content: center;
+        left:calc((100% - 8px )/2);
+        display: block;
+      }
+    }
+  }
+}

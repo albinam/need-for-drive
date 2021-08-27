@@ -13,7 +13,7 @@
   border-left: 1px solid $color-gray-light;
 }
 
-.order_info{
+.order_info {
 
   &_title {
     font-family: $fontMedium;
@@ -36,7 +36,7 @@
       list-style-type: none;
       justify-content: space-between;
 
-      &_element{
+      &_element {
         white-space: nowrap;
         align-self: flex-end;
       }
@@ -57,14 +57,14 @@
     }
   }
 
-  &_price{
+  &_price {
     margin-top: 32px;
     font-family: $fontRegular;
     font-size: 16px;
     line-height: 16px;
   }
 
-  .content_button{
+  .content_button {
     margin: 32px 64px 0 0;
     width: 100%;
   }
@@ -74,5 +74,28 @@
   .order_info_container {
     width: 221px;
     margin-left: 64px;
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .order_info_container {
+    border-left: none;
+    border-top: 1px solid $color-gray-light;
+    height: auto;
+    width: calc(100% - 16px);
+    margin-left: 0;
+    margin-right: 16px;
+    padding-left: 0;
+    margin-top: 8px;
+  }
+  .order_info {
+
+    &_title{
+      text-align: left;
+    }
+    .content_button {
+      width: calc(100% + 32px);
+      margin: 16px 0 16px -16px;
+    }
   }
 }
