@@ -5,6 +5,7 @@
 .order_info_container {
 
   height: calc(100vh - 65px - 64px);
+  min-width: 287px;
   display: flex;
   flex-direction: column;
   padding-right: 64px;
@@ -23,39 +24,6 @@
     padding: 32px 0 26px 0;
     margin-right: auto;
     text-align: right;
-  }
-
-  &_items {
-
-    &_item {
-      display: flex;
-      flex-direction: row;
-      flex: 1;
-      font-family: $fontLight;
-      font-size: 14px;
-      line-height: 16px;
-      list-style-type: none;
-      justify-content: space-between;
-
-      &_element {
-        white-space: nowrap;
-        align-self: flex-end;
-      }
-
-      &_dots {
-        width: 100%;
-        min-width: 24px;
-        background-image: radial-gradient(circle, $color-gray-dark 0.5px, transparent 1px);
-        background-position: bottom;
-        background-size: 1ex 4.5px;
-        background-repeat: space no-repeat;
-        content: "";
-      }
-
-      &_value {
-        color: $color-gray-dark;
-      }
-    }
   }
 
   &_price {

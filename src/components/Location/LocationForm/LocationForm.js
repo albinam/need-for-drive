@@ -1,5 +1,6 @@
 import React from 'react';
 import './LocationForm.scss';
+import Input from './Input/Input';
 
 function LocationForm() {
 
@@ -10,8 +11,7 @@ function LocationForm() {
                     Город
                 </div>
                 <div className="location_form_name">
-                    <input type="text" className="location_form_input"
-                           placeholder="Начните вводить город ..."/>
+                    <Input placeholder="Начните вводить город ..."/>
                     <a className="location_form_button">&#215;</a>
                 </div>
             </div>
@@ -20,8 +20,7 @@ function LocationForm() {
                     Пункт выдачи
                 </div>
                 <div className="location_form_name">
-                    <input type="text" className="location_form_input"
-                           placeholder="Начните вводить пункт ..."/>
+                    <Input placeholder="Начните вводить пункт ..."/>
                     <span className="location_form_button">&#215;</span>
                 </div>
             </div>
