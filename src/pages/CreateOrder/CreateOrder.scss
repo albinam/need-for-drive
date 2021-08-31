@@ -23,8 +23,17 @@
 }
 
 @media (max-width: $desktopMinSize) {
+  .order_page_content {
+    width: calc(100vw - 96px);
+  }
   .order_page_tab_location {
     margin-left: 32px;
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .order_page_content {
+    width: calc(100vw - 96px);
   }
 }
 
@@ -39,7 +48,7 @@
       flex-direction: column;
       margin-left: -34px;
 
-      &_location{
+      &_location {
         margin-left: 0;
       }
     }

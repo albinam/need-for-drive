@@ -29,15 +29,23 @@
 
 @media (max-width: $desktopMinSize) {
   .steps {
+    width: calc(100vw - 96px);
     padding: 8px 0 7px 32px;
   }
 }
+
+@media (max-width: $tabletSize) {
+  .steps {
+    width: calc(100vw - 128px);
+  }
+}
+
 
 @media (max-width: $mobileSizeW) {
   .steps {
     margin-top: 48px;
     padding: 0 0 16px 0;
-    width: 100vw;
+    width: calc(100vw - 18px);
     margin-left: -50px;
     flex-direction: column;
     align-content: center;
