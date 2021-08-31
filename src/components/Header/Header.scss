@@ -47,7 +47,6 @@
   }
 }
 
-
 @media (max-width: $mobileSizeW){
 
   .header {
@@ -66,5 +65,12 @@
         margin-left: auto;
       }
     }
+  }
+}
+
+@media (min-width: $desktopSize) {
+  .header {
+    margin: 32px 0 0 0;
+    width: 1024px;
   }
 }

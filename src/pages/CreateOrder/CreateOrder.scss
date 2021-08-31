@@ -39,6 +39,7 @@
 
 @media (max-width: $mobileSizeW) {
   .order_page {
+    overflow-y: hidden;
 
     &_content {
       width: calc(100vw - 50px);
@@ -52,5 +53,14 @@
         margin-left: 0;
       }
     }
+  }
+}
+
+@media (min-width: $desktopSize) {
+
+  .order_page_content {
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
