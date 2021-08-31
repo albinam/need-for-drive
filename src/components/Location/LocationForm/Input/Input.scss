@@ -1,0 +1,16 @@
+@import "../../../../styles/colors";
+@import "../../../../styles/vars";
+
+.location_form_input {
+  width: 224px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $color-gray-dark;
+  margin-bottom: 16px;
+}
+@media (max-width: $tabletSize) {
+
+  .location_form_input {
+    width: 160px;
+  }
+}
