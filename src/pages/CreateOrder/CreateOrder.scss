@@ -39,7 +39,6 @@
 
 @media (max-width: $mobileSizeW) {
   .order_page {
-    overflow-y: hidden;
 
     &_content {
       width: calc(100vw - 50px);

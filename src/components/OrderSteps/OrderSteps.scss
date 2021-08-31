@@ -9,7 +9,7 @@
   border-bottom: 1px solid $color-gray-light;
   width: calc(100vw - 128px);
 
-  a {
+  &_link {
     font-family: $fontBold;
     font-size: 14px;
     line-height: 16px;
@@ -17,9 +17,14 @@
     margin-right: 38px;
     position: relative;
 
+    &.active{
+      color: $color-accent;
+    }
+
     &:not(:first-child)::before {
       content: '\25BA';
       display: inline-block;
+      font-size: 8px;
       position: absolute;
       top: 0;
       right: calc(100% + 16px);
@@ -51,7 +56,7 @@
     align-content: center;
     text-align: center;
 
-    a {
+    &_link {
       margin-right: 0;
       margin-top: 16px;
 

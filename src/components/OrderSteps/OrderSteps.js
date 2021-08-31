@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './OrderSteps.scss';
+import classNames from "classnames";
 
 export const steps = [
     "Местоположение",
@@ -10,10 +11,13 @@ export const steps = [
 
 function OrderSteps() {
 
+    const [activeLink] = useState(steps[0]);
+
     return (
         <nav className="steps">
             {steps.map((link) => (
-                <a key={link} href="#!">{link}</a>
+                <a  className={classNames("steps_link", (link === activeLink) ? "active" : null)}
+                    key={link} href="#!">{link}</a>
             ))}
         </nav>
     )
