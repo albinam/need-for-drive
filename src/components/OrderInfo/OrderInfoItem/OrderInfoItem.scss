@@ -31,3 +31,22 @@
     width: 101px;
   }
 }
+
+@media (max-width: $mobileSizeW) {
+  .item_dots {
+    width: 60%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .item_dots {
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .item_dots {
+    width: 29%;
+  }
+}
