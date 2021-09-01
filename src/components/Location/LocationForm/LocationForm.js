@@ -6,24 +6,8 @@ function LocationForm() {
 
     return (
         <div className="location_form">
-            <div className="location_form_line">
-                <div className="location_form_label">
-                    Город
-                </div>
-                <div className="location_form_name">
-                    <Input placeholder="Начните вводить город ..."/>
-                    <a className="location_form_button">&#215;</a>
-                </div>
-            </div>
-            <div className="location_form_line">
-                <div className="location_form_label">
-                    Пункт выдачи
-                </div>
-                <div className="location_form_name">
-                    <Input placeholder="Начните вводить пункт ..."/>
-                    <span className="location_form_button">&#215;</span>
-                </div>
-            </div>
+            <Input label="Город" placeholder="Начните вводить город ..."/>
+            <Input label="Пункт выдачи" placeholder="Начните вводить пункт ..."/>
         </div>
     );
 }

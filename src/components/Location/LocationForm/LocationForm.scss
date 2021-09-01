@@ -6,18 +6,10 @@
   font-size: 14px;
   line-height: 16px;
   color: $color-main;
-
-  &_label {
-    text-align: right;
-    width: 91px;
-  }
-
-  &_line {
+}
+@media (max-width: $mobileSizeW) and (min-width: 400px) {
+  .location_form {
     display: flex;
     flex-direction: row;
-  }
-
-  &_name {
-    margin-left: 16px;
   }
 }
