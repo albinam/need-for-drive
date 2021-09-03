@@ -23,13 +23,16 @@
   .location-map img {
     width: 70%;
     max-height: 300px;
-    object-fit: cover;
   }
 }
 
 @media (max-width: $desktopMinSize) {
   .location-map {
     margin-right: 64px;
+
+    img {
+      max-height: 300px;
+    }
   }
 }
 

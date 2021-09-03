@@ -5,6 +5,10 @@
   display: flex;
   flex-direction: row;
   margin-top: 32px;
+  font-family: $fontLight;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-gray-dark;
 
   &_item {
     flex-direction: row;
@@ -15,10 +19,11 @@
       margin-left: 36px;
     }
 
-    input{
+    input {
       display: none;
 
       &:checked + label {
+        color: $color-main;
 
         &::before {
           border: 3px solid $color-accent;
@@ -29,10 +34,6 @@
     label {
       position: relative;
       cursor: pointer;
-      font-family: $fontLight;
-      font-size: 14px;
-      line-height: 16px;
-      color: $color-main;
 
       &::before {
         content: "";

@@ -1,9 +1,27 @@
 @import "src/styles/vars";
+@import "src/styles/colors";
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: white;
+}
+
+::-webkit-scrollbar-track {
+  color: grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:  #0ec261;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-clip: content-box;
+}
 
 .order_page {
   height: 100vh;
   margin: 0 auto;
   display: flex;
+  overflow-y: hidden;
 
   &_content {
     flex-direction: column;
@@ -13,6 +31,16 @@
   &_tab {
     display: flex;
     flex-direction: row;
+    margin-left: 32px;
+    height: 100%;
+
+    &_cars {
+      display: flex;
+      flex-direction: column;
+      padding-right: 192px;
+      height: 80%;
+      overflow-y: scroll;
+    }
 
     &_location {
       flex-direction: column;
@@ -20,6 +48,7 @@
       margin-top: 32px;
     }
   }
+
 }
 
 @media (max-width: $desktopMinSize) {

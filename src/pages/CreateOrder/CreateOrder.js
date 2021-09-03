@@ -8,10 +8,11 @@ import LocationMap from "../../components/Location/LocationMap/LocationMap";
 import OrderInfo from "../../components/OrderInfo/OrderInfo";
 import stepsButtons from "../../assets/data/stepsButtons";
 import CategorySelector from "../../components/ModelSelector/CategorySelector";
+import CarCards from "../../components/CarCards/CarCards";
 
 function CreateOrder() {
 
-    const [currentTab, setCurrentTab] = useState(0);
+    const [currentTab, setCurrentTab] = useState(1);
 
     const order = useState({
         point: "Ульяновск, Нариманова 42",
@@ -39,6 +40,7 @@ function CreateOrder() {
                     {(currentTab === 1) ? (
                         <div className="order_page_tab_cars">
                             <CategorySelector/>
+                            <CarCards/>
                         </div>
                     ) : null}
                     <OrderInfo order = {order} setStepChange={setStepChange} button={stepsButtons[currentTab]}/>
