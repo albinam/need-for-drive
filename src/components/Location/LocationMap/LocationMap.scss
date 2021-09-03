@@ -18,6 +18,14 @@
     margin-top: 16px;
   }
 }
+@media (max-height: 640px) {
+
+  .location-map img {
+    width: 70%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+}
 
 @media (max-width: $desktopMinSize) {
   .location-map {
@@ -29,5 +37,11 @@
   .location-map {
     padding-right: 16px;
     margin-right: 0;
+  }
+}
+
+@media (min-width: $desktopSize) {
+  .location-map {
+    margin-right: 64px;
   }
 }

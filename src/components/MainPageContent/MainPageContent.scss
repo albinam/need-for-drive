@@ -1,5 +1,6 @@
 @import "src/styles/colors";
 @import "src/styles/vars";
+@import '../../components/Header/Header';
 
 .content-container {
   display: flex;
@@ -130,6 +131,14 @@
       &:active {
         color: $color-gray-light;
       }
+    }
+  }
+}
+
+@media (min-width: $desktopSize) {
+  .content-container {
+    .header {
+      width: calc((100vw - 128px - 64px) / 2);
     }
   }
 }

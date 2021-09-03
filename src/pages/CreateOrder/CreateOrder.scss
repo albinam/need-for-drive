@@ -1,4 +1,4 @@
-@import '../../components/Header/Header';
+@import "src/styles/vars";
 
 .order_page {
   height: 100vh;
@@ -57,9 +57,21 @@
 
 @media (min-width: $desktopSize) {
 
-  .order_page_content {
-    width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
+  .order_page {
+    &_content {
+      width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &_tab {
+      position: fixed;
+      top: 128px;
+      width: 1024px;
+
+      &_location {
+        margin-left: 0;
+      }
+    }
   }
 }
