@@ -1,0 +1,58 @@
+@import "../../../../styles/colors";
+@import "../../../../styles/vars";
+
+.location_form {
+
+  &_input {
+    width: 224px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $color-gray-dark;
+    margin-bottom: 16px;
+  }
+
+  &_label {
+    text-align: right;
+    width: 91px;
+  }
+
+  &_line {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_name {
+    margin-left: 16px;
+  }
+}
+@media (max-width: $tabletSize) {
+
+  .location_form_input {
+    width: 180px;
+  }
+}
+
+@media (max-width: $mobileSizeW) and (min-width: 400px) {
+
+  .location_form {
+    &_line {
+      flex-direction: column;
+      width: 100%;
+      margin-right: 8px;
+      justify-content: center;
+    }
+    &_input {
+      width: 90%;
+    }
+    &_label{
+      text-align: left;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    &_name {
+      margin-left: 0;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

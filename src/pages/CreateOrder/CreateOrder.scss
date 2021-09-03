@@ -1,0 +1,77 @@
+@import "src/styles/vars";
+
+.order_page {
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+
+  &_content {
+    flex-direction: column;
+    width: calc(100vw - 64px);
+  }
+
+  &_tab {
+    display: flex;
+    flex-direction: row;
+
+    &_location {
+      flex-direction: column;
+      margin-left: 64px;
+      margin-top: 32px;
+    }
+  }
+}
+
+@media (max-width: $desktopMinSize) {
+  .order_page_content {
+    width: calc(100vw - 96px);
+  }
+  .order_page_tab_location {
+    margin-left: 32px;
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .order_page_content {
+    width: calc(100vw - 96px);
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .order_page {
+
+    &_content {
+      width: calc(100vw - 50px);
+    }
+
+    &_tab {
+      flex-direction: column;
+      margin-left: -34px;
+
+      &_location {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktopSize) {
+
+  .order_page {
+    &_content {
+      width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &_tab {
+      position: fixed;
+      top: 128px;
+      width: 1024px;
+
+      &_location {
+        margin-left: 0;
+      }
+    }
+  }
+}

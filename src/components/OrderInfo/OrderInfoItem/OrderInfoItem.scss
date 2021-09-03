@@ -1,0 +1,52 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.item {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  font-family: $fontLight;
+  font-size: 14px;
+  line-height: 16px;
+  justify-content: space-between;
+
+  &_element {
+    white-space: nowrap;
+    align-self: flex-end;
+  }
+
+  &_dots {
+    width: 100%;
+    max-width: 48px;
+    background-image: radial-gradient(circle, $color-gray-dark 0.5px, transparent 1px);
+    background-position: bottom;
+    background-size: 1ex 4.5px;
+    background-repeat: space no-repeat;
+    content: "";
+  }
+
+  &_value {
+    text-align: right;
+    color: $color-gray-dark;
+    width: 101px;
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .item_dots {
+    width: 60%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .item_dots {
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .item_dots {
+    width: 29%;
+  }
+}
