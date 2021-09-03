@@ -17,7 +17,7 @@ function CreateOrder() {
     const order = useState({
         point: "Ульяновск, Нариманова 42",
         price: "от 8 000 до 12 000",
-        car: ""
+        car: "Hyndai, i30 N"
     });
 
     const setStepChange = tab => {

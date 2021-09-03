@@ -7,7 +7,7 @@
   flex-direction: column;
   font-family: $fontRegular;
   border: 1px solid $color-gray-light;
-  width: calc(100% / 2 - 3px);
+  width: 368px;
   height: 224px;
   cursor: pointer;
 
@@ -38,5 +38,17 @@
 
   &.active {
     border: 1px solid $color-accent;
+  }
+}
+
+@media (min-width: $desktopSize) {
+  .card {
+    width: 315px;
+  }
+}
+
+@media (max-width: $desktopMinSize) {
+  .card {
+    width: 100%;
   }
 }
