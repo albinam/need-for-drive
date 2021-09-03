@@ -7,6 +7,7 @@ import LocationForm from "../../components/Location/LocationForm/LocationForm";
 import LocationMap from "../../components/Location/LocationMap/LocationMap";
 import OrderInfo from "../../components/OrderInfo/OrderInfo";
 import stepsButtons from "../../assets/data/stepsButtons";
+import CategorySelector from "../../components/ModelSelector/CategorySelector";
 
 function CreateOrder() {
 
@@ -24,7 +25,6 @@ function CreateOrder() {
 
     return (
         <div className="order_page">
-            { console.log(stepsButtons[currentTab])}
             <Menu/>
             <div className="order_page_content">
                 <Header/>
@@ -38,6 +38,7 @@ function CreateOrder() {
                     ) : null}
                     {(currentTab === 1) ? (
                         <div className="order_page_tab_cars">
+                            <CategorySelector/>
                         </div>
                     ) : null}
                     <OrderInfo order = {order} setStepChange={setStepChange} button={stepsButtons[currentTab]}/>
