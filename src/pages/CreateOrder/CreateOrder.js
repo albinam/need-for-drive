@@ -29,7 +29,7 @@ function CreateOrder() {
             <Menu/>
             <div className="order_page_content">
                 <Header/>
-                <OrderSteps step={currentTab} setStepChange ={setStepChange}/>
+                <OrderSteps step={currentTab} setStepChange={setStepChange}/>
                 <div className="order_page_tab">
                     {(currentTab === 0) ? (
                         <div className="order_page_tab_location">
@@ -43,7 +43,7 @@ function CreateOrder() {
                             <CarCards/>
                         </div>
                     ) : null}
-                    <OrderInfo order = {order} setStepChange={setStepChange} button={stepsButtons[currentTab]}/>
+                    <OrderInfo order={order} setStepChange={setStepChange} button={stepsButtons[currentTab]}/>
                 </div>
             </div>
         </div>

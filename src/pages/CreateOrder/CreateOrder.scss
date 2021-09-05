@@ -22,7 +22,7 @@
   height: 100vh;
   margin: 0 auto;
   display: flex;
-  overflow: hidden;
+  position: fixed;
 
   &_content {
     flex-direction: column;
@@ -32,15 +32,16 @@
   &_tab {
     display: flex;
     flex-direction: row;
+    position: relative;
     margin-left: 32px;
     height: 100%;
 
     &_cars {
-      overflow: auto;
-      height: 100%;
-      flex:1;
+      height: calc(100vh - 64px - 66px);
+      flex: 1;
       flex-direction: column;
       padding-right: 192px;
+      overflow: auto;
     }
 
     &_location {
@@ -49,7 +50,6 @@
       margin-top: 32px;
     }
   }
-
 }
 
 @media (max-width: $desktopMinSize) {
@@ -99,10 +99,12 @@
 @media (min-width: $desktopSize) {
 
   .order_page {
+    position: unset;
+
     &_content {
-      width: 1024px;
       margin-left: auto;
       margin-right: auto;
+      width: 1024px;
     }
 
     &_tab {
