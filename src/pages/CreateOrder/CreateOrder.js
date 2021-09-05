@@ -31,18 +31,18 @@ function CreateOrder() {
                 <Header/>
                 <OrderSteps step={currentTab} setStepChange={setStepChange}/>
                 <div className="order_page_tab">
-                    {(currentTab === 0) ? (
+                    {(currentTab === 0) && (
                         <div className="order_page_tab_location">
                             <LocationForm/>
                             <LocationMap/>
                         </div>
-                    ) : null}
-                    {(currentTab === 1) ? (
+                    )}
+                    {(currentTab === 1) && (
                         <div className="order_page_tab_cars">
                             <CategorySelector/>
                             <CarCards/>
                         </div>
-                    ) : null}
+                    )}
                     <OrderInfo order={order} setStepChange={setStepChange} button={stepsButtons[currentTab]}/>
                 </div>
             </div>
