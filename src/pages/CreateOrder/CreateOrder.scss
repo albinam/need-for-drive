@@ -22,7 +22,7 @@
   height: 100vh;
   margin: 0 auto;
   display: flex;
-  overflow-y:hidden;
+  overflow: hidden;
 
   &_content {
     flex-direction: column;
@@ -37,7 +37,6 @@
 
     &_cars {
       overflow: auto;
-      position: relative;
       height: 100%;
       flex:1;
       flex-direction: column;
