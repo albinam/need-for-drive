@@ -2,9 +2,9 @@
 @import "src/styles/vars";
 
 .cards-container {
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-family: $fontRegular;
-  flex-wrap: wrap;
   margin-top: 48px;
 }
