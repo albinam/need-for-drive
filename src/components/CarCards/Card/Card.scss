@@ -1,0 +1,65 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: $fontRegular;
+  border: 1px solid $color-gray-light;
+  width: 368px;
+  height: 222px;
+  cursor: pointer;
+
+  &_title{
+    line-height: 21px;
+    font-size: 18px;
+    color: $color-main;
+    margin: 16px 0 0 16px;
+  }
+
+  &_price{
+    font-size: 14px;
+    line-height: 16px;
+    color:$color-gray-dark;
+    margin-left: 16px;
+  }
+
+
+  &_image {
+    position: absolute;
+    object-fit: cover;
+    bottom: 16px;
+    right: 16px;
+  }
+  &:hover {
+    border: 1px solid $color-gray-dark;
+  }
+
+  &.active {
+    border: 1px solid $color-accent;
+  }
+}
+
+@media (min-width: $desktopSize) {
+  .card {
+    width: 315px;
+  }
+}
+
+@media (max-width: $desktopMinSize) {
+  .card {
+    width: 100%;
+  }
+}
+@media (max-width: $tabletSize) {
+  .card {
+    &_image {
+      bottom: 8px;
+      right: 8px;
+      img{
+        margin-left: 8px;
+      }
+    }
+  }
+}

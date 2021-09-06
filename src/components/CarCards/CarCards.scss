@@ -1,0 +1,10 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  font-family: $fontRegular;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
