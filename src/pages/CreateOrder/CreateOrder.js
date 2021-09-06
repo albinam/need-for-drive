@@ -7,7 +7,7 @@ import LocationForm from "../../components/Location/LocationForm/LocationForm";
 import LocationMap from "../../components/Location/LocationMap/LocationMap";
 import OrderInfo from "../../components/OrderInfo/OrderInfo";
 import stepsButtons from "../../assets/data/stepsButtons";
-import CategorySelector from "../../components/ModelSelector/CategorySelector";
+import CategorySelector from "../../components/CategorySelector/CategorySelector";
 import CarCards from "../../components/CarCards/CarCards";
 
 function CreateOrder() {
