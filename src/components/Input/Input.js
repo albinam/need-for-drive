@@ -14,13 +14,13 @@ function Input({placeholder, label, type}) {
     }
 
     return (
-        <div className="location_form_line">
-            <div className="location_form_label">
+        <div className="form_line">
+            <div className="form_label">
                 {label}
             </div>
-            <div className="location_form_name">
-                <input type={inputType}  onBlur={() => setInputType("text")} onFocus={() => focusHandler()} className="location_form_input" placeholder={placeholder}/>
-                <a className="location_form_button">&#215;</a>
+            <div className="form_name">
+                <input type={inputType}  onBlur={() => setInputType("text")} onFocus={() => focusHandler()} className="form_input" placeholder={placeholder}/>
+                <a className="form_button">&#215;</a>
             </div>
         </div>
     )
