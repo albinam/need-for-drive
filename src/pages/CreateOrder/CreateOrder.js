@@ -11,6 +11,7 @@ import CategorySelector from "../../components/CategorySelector/CategorySelector
 import CarCards from "../../components/CarCards/CarCards";
 import categories from "../../assets/data/categories";
 import RentDatesForm from "../../components/RentDatesForm/RentDatesForm";
+import Checkbox from "../../components/Checkbox/Checkbox";
 
 function CreateOrder() {
 
@@ -19,7 +20,11 @@ function CreateOrder() {
     const order = useState({
         point: "Ульяновск, Нариманова 42",
         price: "от 8 000 до 12 000",
-        car: "Hyndai, i30 N"
+        car: "Hyndai, i30 N",
+        color:"Голубой",
+        rentDates:"1д 2ч",
+        tariff:"На сутки",
+        additional:["Полный бак"]
     });
 
     const setStepChange = tab => {
@@ -28,7 +33,6 @@ function CreateOrder() {
 
     return (
         <div className="order_page">
-            {console.log(categories[0].carCategory)}
             <Menu/>
             <div className="order_page_content">
                 <Header/>
@@ -54,6 +58,7 @@ function CreateOrder() {
                             <div className="order_page_tab_additional_label">Тариф</div>
                             <CategorySelector type="price" categories={categories[0].price}/>
                             <div className="order_page_tab_additional_label">Доп. услуги</div>
+                            <Checkbox additional={categories[0].additional}/>
                         </div>
                     )}
                     <OrderInfo order={order} setStepChange={setStepChange} button={stepsButtons[currentTab]}/>

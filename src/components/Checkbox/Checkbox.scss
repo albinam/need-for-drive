@@ -1,37 +1,24 @@
 @import "src/styles/colors";
 @import "src/styles/vars";
 
-.category_selector {
+.checkbox_selector {
   display: flex;
-  flex-direction: row;
-  margin-top: 32px;
+  flex-direction: column;
+  margin-top: 16px;
   font-family: $fontLight;
   font-size: 14px;
   line-height: 16px;
   color: $color-gray-dark;
-
-  &.carColor {
-    margin-top: 16px;
-  }
-
-  &.price {
-    flex-direction: column;
-  }
 
   &_item {
     flex-direction: row;
     display: flex;
     margin-left: 20px;
 
-    &.price {
-      &:not(:first-child) {
-        margin-top: 8px;
-        margin-left: 20px;
-      }
-    }
 
     &:not(:first-child) {
-      margin-left: 36px;
+      margin-left: 20px;
+      margin-top: 8px;
     }
 
     input {
@@ -41,7 +28,10 @@
         color: $color-main;
 
         &::before {
-          border: 3px solid $color-accent;
+          background-image: url("../../assets/images/icons/check.svg");
+          background-size: 12px;
+          background-repeat: no-repeat;
+          border: 1px solid $color-accent;
         }
       }
     }
@@ -54,7 +44,7 @@
         content: "";
         width: 12px;
         height: 12px;
-        border-radius: 50%;
+        border-radius: 0;
         border: 1px solid $color-gray-dark;
         box-sizing: border-box;
         position: absolute;
@@ -66,28 +56,9 @@
     }
   }
 }
-
 @media (max-width: $mobileSizeW) {
-  .category_selector {
+  .category_selector{
     justify-content: center;
     font-size: 12px;
-
-    &.carColor {
-      justify-content: left;
-      flex-direction: column;
-      font-size: 14px;
-    }
-    &.price {
-      font-size: 14px;
-    }
-
-    &_item {
-      &.carColor {
-        &:not(:first-child) {
-          margin-top: 8px;
-          margin-left: 20px;
-        }
-      }
-    }
   }
 }

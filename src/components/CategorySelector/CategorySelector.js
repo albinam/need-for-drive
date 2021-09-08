@@ -14,7 +14,7 @@ function CategorySelector({categories, type}) {
                 (category => {
                     return (
                         <div key={category.id}
-                             className={classNames("category_selector_item", (type === "price") ? type : null, (category === selected) ? "active" : null)}>
+                             className={classNames("category_selector_item", (type) ? type : null, (category === selected) ? "active" : null)}>
                             <input type="radio" name="category_selector_item_radio" checked={category === selected}/>
                             <label
                                 className="category_selector_item_label"

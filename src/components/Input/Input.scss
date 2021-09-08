@@ -1,6 +1,10 @@
 @import "../../styles/colors";
 @import "../../styles/vars";
 
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  margin-right: 16px;
+}
+
 .location_form {
 
   &_input {
