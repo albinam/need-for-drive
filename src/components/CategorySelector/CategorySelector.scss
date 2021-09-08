@@ -10,10 +10,25 @@
   line-height: 16px;
   color: $color-gray-dark;
 
+  &.carColor{
+    margin-top: 16px;
+  }
+
+  &.price{
+    flex-direction: column;
+  }
+
   &_item {
     flex-direction: row;
     display: flex;
     margin-left: 20px;
+
+    &.price{
+      &:not(:first-child) {
+        margin-top: 8px;
+        margin-left: 20px;
+      }
+    }
 
     &:not(:first-child) {
       margin-left: 36px;

@@ -9,10 +9,12 @@ import OrderInfo from "../../components/OrderInfo/OrderInfo";
 import stepsButtons from "../../assets/data/stepsButtons";
 import CategorySelector from "../../components/CategorySelector/CategorySelector";
 import CarCards from "../../components/CarCards/CarCards";
+import categories from "../../assets/data/categories";
+import RentDatesForm from "../../components/RentDatesForm/RentDatesForm";
 
 function CreateOrder() {
 
-    const [currentTab, setCurrentTab] = useState(1);
+    const [currentTab, setCurrentTab] = useState(2);
 
     const order = useState({
         point: "Ульяновск, Нариманова 42",
@@ -26,6 +28,7 @@ function CreateOrder() {
 
     return (
         <div className="order_page">
+            {console.log(categories[0].carCategory)}
             <Menu/>
             <div className="order_page_content">
                 <Header/>
@@ -39,8 +42,18 @@ function CreateOrder() {
                     )}
                     {(currentTab === 1) && (
                         <div className="order_page_tab_cars">
-                            <CategorySelector/>
+                            <CategorySelector type="carCategory" categories={categories[0].carCategory}/>
                             <CarCards/>
+                        </div>
+                    )}
+                    {(currentTab === 2) && (
+                        <div className="order_page_tab_additional">
+                            <div className="order_page_tab_additional_label">Цвет</div>
+                            <CategorySelector type="carColor" categories={categories[0].carColor}/>
+                            <RentDatesForm/>
+                            <div className="order_page_tab_additional_label">Тариф</div>
+                            <CategorySelector type="price" categories={categories[0].price}/>
+                            <div className="order_page_tab_additional_label">Доп. услуги</div>
                         </div>
                     )}
                     <OrderInfo order={order} setStepChange={setStepChange} button={stepsButtons[currentTab]}/>

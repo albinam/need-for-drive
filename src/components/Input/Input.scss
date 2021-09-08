@@ -1,5 +1,5 @@
-@import "../../../../styles/colors";
-@import "../../../../styles/vars";
+@import "../../styles/colors";
+@import "../../styles/vars";
 
 .location_form {
 
@@ -19,6 +19,15 @@
   &_line {
     display: flex;
     flex-direction: row;
+    font-family: $fontLight;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-main;
+  }
+
+  &_button{
+    margin-left: -8px;
+    color:$color-main;
   }
 
   &_name {
