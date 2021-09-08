@@ -19,7 +19,7 @@ function CreateOrder() {
 
     const order = useState({
         point: "Ульяновск, Нариманова 42",
-        price: "от 8 000 до 12 000",
+        price: "16 000",
         car: "Hyndai, i30 N",
         color:"Голубой",
         rentDates:"1д 2ч",
