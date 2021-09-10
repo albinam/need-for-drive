@@ -1,0 +1,10 @@
+@import "src/styles/vars";
+@import "src/styles/colors";
+
+.order_page_tab_additional_label{
+  margin-top: 32px;
+  font-family: $fontLight;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-main;
+}
