@@ -6,7 +6,7 @@ import {ReactComponent as Facebook} from '../../assets/images/icons/facebook.svg
 import {ReactComponent as Instagram} from '../../assets/images/icons/instagram.svg'
 
 const menuItems = ['Парковка', 'Страховка', 'Бензин', 'Обслуживание'];
-const icons = [<Telegram key ="telegram"/>, <Facebook key ="facebook"/>, <Instagram key="instagram"/>];
+const icons = [<Telegram key="telegram"/>, <Facebook key="facebook"/>, <Instagram key="instagram"/>];
 
 function Menu() {
     const [langState, setLang] = useState("Рус");
@@ -14,11 +14,10 @@ function Menu() {
     const openedMenu = menuState ? "open" : null;
 
     useEffect(() => {
-        if(openedMenu){
-            document.body.style.overflow='hidden';
-        }
-        else{
-            document.body.style.overflow='auto';
+        if (openedMenu) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
         }
     });
 
@@ -34,29 +33,35 @@ function Menu() {
             </div>
             <button
                 className={classNames("hamburger-menu_lang", openedMenu)}
-                onClick={() => setLang(langState ==="Eng" ? "Рус" : "Eng")}
+                onClick={() => setLang(langState === "Eng" ? "Рус" : "Eng")}
             >{langState}
             </button>
             <div
                 className={classNames("hamburger-menu_full", openedMenu)}>
-                {menuItems.map(item =>
-                    <a
-                        key={item}
-                        href='#'
-                        className={classNames("hamburger-menu_link", openedMenu)}
-                    >{item}</a>)}
-                <div className={classNames("hamburger-menu_icons", openedMenu)}>
-                    {icons.map(icon =>
+                {menuItems.map((item, index) => {
+                    return (
                         <a
-                            key={icon}
+                            key={index}
                             href='#'
-                            className={classNames("hamburger-menu_icon", openedMenu)}
-                        > {icon}
-                        </a>)}
+                            className={classNames("hamburger-menu_link", openedMenu)}
+                        >{item}</a>
+                    )
+                })}
+                <div className={classNames("hamburger-menu_icons", openedMenu)}>
+                    {icons.map((icon, index) => {
+                        return (
+                            <a
+                                key={index}
+                                href='#'
+                                className={classNames("hamburger-menu_icon", openedMenu)}
+                            > {icon}
+                            </a>)
+                    })}
                 </div>
             </div>
         </div>
-    );
+    )
+        ;
 }
 
 export default Menu;

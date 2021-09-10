@@ -16,7 +16,7 @@ function OrderSteps({step, setStepChange}) {
     )
 }
 OrderSteps.propTypes = {
-    step: PropTypes.array,
+    step: PropTypes.number,
     setStepChange: PropTypes.func
 }
 

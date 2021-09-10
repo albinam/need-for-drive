@@ -17,7 +17,7 @@ function Card({card, handleClick, selected}) {
 }
 
 Card.propTypes = {
-    card:  PropTypes.array,
+    card:  PropTypes.object,
     handleClick: PropTypes.func,
     selected: PropTypes.number
 }

@@ -15,8 +15,9 @@ function CategorySelector({categories, type}) {
                     return (
                         <div key={category.id}
                              className={classNames("category_selector_item", (type) ? type : null, (category === selected) ? "active" : null)}>
-                            <input type="radio" name="category_selector_item_radio" checked={category === selected}/>
+                            <input key={category.id} type="radio" name="category_selector_item_radio" onChange={() => handleClick(category)} checked={category === selected}/>
                             <label
+                                key={category.id}
                                 className="category_selector_item_label"
                                 onClick={() => handleClick(category)}
                             >

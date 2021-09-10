@@ -20,6 +20,6 @@ function AdditionalTab({categories}) {
 }
 
 AdditionalTab.propTypes = {
-    categories:  PropTypes.array
+    categories:  PropTypes.object
 }
 export default AdditionalTab;
