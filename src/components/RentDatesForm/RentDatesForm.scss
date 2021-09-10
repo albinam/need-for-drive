@@ -1,0 +1,22 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+@import '../Input/Input.scss';
+
+.dates_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+
+  &_label {
+    margin-top: 32px;
+    font-family: $fontLight;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-main;
+    margin-bottom: 16px;
+  }
+  .form_label {
+    width: 18px;
+  }
+}
+

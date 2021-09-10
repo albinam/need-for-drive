@@ -49,6 +49,16 @@
       margin-left: 64px;
       margin-top: 32px;
     }
+    &_additional{
+
+      &_label{
+        margin-top: 32px;
+        font-family: $fontLight;
+        font-size: 14px;
+        line-height: 16px;
+        color: $color-main;
+      }
+    }
   }
 }
 
@@ -115,6 +125,10 @@
 
       &_cars {
         padding-right: 64px;
+      }
+
+      &_additional {
+        flex:1;
       }
 
       &_location {

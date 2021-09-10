@@ -1,7 +1,11 @@
-@import "../../../../styles/colors";
-@import "../../../../styles/vars";
+@import "../../styles/colors";
+@import "../../styles/vars";
 
-.location_form {
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  margin-right: 16px;
+}
+
+.form {
 
   &_input {
     width: 224px;
@@ -19,6 +23,15 @@
   &_line {
     display: flex;
     flex-direction: row;
+    font-family: $fontLight;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-main;
+  }
+
+  &_button{
+    margin-left: -8px;
+    color:$color-main;
   }
 
   &_name {
@@ -27,14 +40,14 @@
 }
 @media (max-width: $tabletSize) {
 
-  .location_form_input {
+  .form_input {
     width: 180px;
   }
 }
 
 @media (max-width: $mobileSizeW) and (min-width: 400px) {
 
-  .location_form {
+  .form {
     &_line {
       flex-direction: column;
       width: 100%;
