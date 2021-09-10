@@ -11,13 +11,13 @@ function CategorySelector({categories, type}) {
     return (
         <div className={classNames("category_selector", type)}>
             {categories.map(
-                (category => {
+                ((category,index) => {
                     return (
-                        <div key={category.id}
+                        <div key={index}
                              className={classNames("category_selector_item", (type) ? type : null, (category === selected) ? "active" : null)}>
                             <input key={category.id} type="radio" name="category_selector_item_radio" onChange={() => handleClick(category)} checked={category === selected}/>
                             <label
-                                key={category.id}
+                                key={category.category}
                                 className="category_selector_item_label"
                                 onClick={() => handleClick(category)}
                             >
