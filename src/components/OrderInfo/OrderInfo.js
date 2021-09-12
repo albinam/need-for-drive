@@ -32,7 +32,7 @@ function OrderInfo({order, setStepChange, button}) {
 
 OrderInfo.propTypes = {
     setStepChange: PropTypes.func,
-    button: PropTypes.array,
+    button: PropTypes.object,
     order: PropTypes.array
 }
 

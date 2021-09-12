@@ -10,12 +10,12 @@ import stepsButtons from "../../assets/data/stepsButtons";
 import CategorySelector from "../../components/CategorySelector/CategorySelector";
 import CarCards from "../../components/CarCards/CarCards";
 import categories from "../../assets/data/categories";
-import RentDatesForm from "../../components/RentDatesForm/RentDatesForm";
-import Checkbox from "../../components/Checkbox/Checkbox";
+import Total from "../../components/Total/Total";
+import AdditionalTab from "../../components/AdditionalTab/AdditionalTab";
 
 function CreateOrder() {
 
-    const [currentTab, setCurrentTab] = useState(2);
+    const [currentTab, setCurrentTab] = useState(3);
 
     const order = useState({
         point: "Ульяновск, Нариманова 42",
@@ -52,13 +52,12 @@ function CreateOrder() {
                     )}
                     {(currentTab === 2) && (
                         <div className="order_page_tab_additional">
-                            <div className="order_page_tab_additional_label">Цвет</div>
-                            <CategorySelector type="carColor" categories={categories[0].carColor}/>
-                            <RentDatesForm/>
-                            <div className="order_page_tab_additional_label">Тариф</div>
-                            <CategorySelector type="price" categories={categories[0].price}/>
-                            <div className="order_page_tab_additional_label">Доп. услуги</div>
-                            <Checkbox additional={categories[0].additional}/>
+                            <AdditionalTab categories={categories[0]}/>
+                        </div>
+                    )}
+                    {(currentTab === 3) && (
+                        <div className="order_page_tab_total">
+                            <Total/>
                         </div>
                     )}
                     <OrderInfo order={order} setStepChange={setStepChange} button={stepsButtons[currentTab]}/>
