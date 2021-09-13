@@ -81,6 +81,11 @@
     flex: 0;
   }
 }
+@media (max-width: 830px) {
+  .total {
+    flex-direction: column;
+  }
+}
 
 @media (max-width: $mobileSizeW) {
   .order_page {
