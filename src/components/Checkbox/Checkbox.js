@@ -17,7 +17,7 @@ function Checkbox({additional}) {
                     return (
                         <div key={index}
                              className={classNames("checkbox_selector_item", (selected[index]) ? "active" : null)}>
-                            <input type="checkbox" name="checkbox_selector_item_box" checked={selected[index]}/>
+                            <input type="checkbox" name="checkbox_selector_item_box" checked={selected[index]}  onChange={() => handleClick(index)} />
                             <label
                                 className="checkbox_selector_item_label"
                                 onClick={() => handleClick(index)}

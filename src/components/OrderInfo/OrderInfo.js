@@ -4,7 +4,7 @@ import '../../styles/buttons.scss';
 import OrderInfoItem from "./OrderInfoItem/OrderInfoItem";
 import PropTypes from "prop-types";
 
-function OrderInfo({order, setStepChange, button}) {
+function OrderInfo({order, setStepChange, button, setOrderConfirmation}) {
     return (
         <div className="order_info_container">
             <div className="order_info">
@@ -23,8 +23,11 @@ function OrderInfo({order, setStepChange, button}) {
                         }))}
                 </ul>
                 <div className="order_info_price">Цена: {order[0].price} &#8381;</div>
+                {(button.id < 3)?
                 <button onClick={() => setStepChange(button.id + 1)}
                         className="content_button">{button.buttonName}</button>
+                    :
+                    <button onClick={() => setOrderConfirmation(true)} className="content_button">Заказать</button>}
             </div>
         </div>
     )
@@ -32,7 +35,8 @@ function OrderInfo({order, setStepChange, button}) {
 
 OrderInfo.propTypes = {
     setStepChange: PropTypes.func,
-    button: PropTypes.array,
+    setOrderConfirmation: PropTypes.func,
+    button: PropTypes.object,
     order: PropTypes.array
 }
 

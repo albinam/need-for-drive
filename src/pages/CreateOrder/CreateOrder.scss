@@ -49,15 +49,10 @@
       margin-left: 64px;
       margin-top: 32px;
     }
-    &_additional{
 
-      &_label{
-        margin-top: 32px;
-        font-family: $fontLight;
-        font-size: 14px;
-        line-height: 16px;
-        color: $color-main;
-      }
+    &_total {
+      margin-top: 32px;
+      flex: 1;
     }
   }
 }
@@ -78,11 +73,27 @@
   .order_page_content {
     width: calc(100vw - 96px);
   }
+  .order_page_tab {
+    height: fit-content;
+  }
+  .order_page_tab_total {
+    margin-left: -16px;
+    flex: 0;
+  }
+}
+@media (max-width: 830px) {
+  .total {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: $mobileSizeW) {
   .order_page {
-    overflow-y: auto;
+    overflow: auto;
+
+    &.opened {
+      overflow: hidden;
+    }
 
     &_content {
       width: calc(100vw - 50px);
@@ -128,7 +139,7 @@
       }
 
       &_additional {
-        flex:1;
+        flex: 1;
       }
 
       &_location {
