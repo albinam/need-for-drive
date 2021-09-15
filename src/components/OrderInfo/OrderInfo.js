@@ -36,7 +36,7 @@ function OrderInfo({setOrderConfirmation}) {
                 <div className="order_info_title">Ваш заказ:</div>
                 <ul className="order_info_items">
                     <OrderInfoItem value={cityPointInfo()} element="Пункт выдачи"/>
-                    <OrderInfoItem value={order.car} element="Модель"/>
+                    <OrderInfoItem value={order.car.name} element="Модель"/>
                     <OrderInfoItem value={order.color} element="Цвет"/>
                     <OrderInfoItem value={order.rentDates.dateTo} element="Длительность аренды"/>
                     <OrderInfoItem value={order.tariff} element="Тариф"/>

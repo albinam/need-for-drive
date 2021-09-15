@@ -6,14 +6,13 @@ import OrderSteps from "../../components/OrderSteps/OrderSteps";
 import LocationForm from "../../components/Location/LocationForm/LocationForm";
 import LocationMap from "../../components/Location/LocationMap/LocationMap";
 import OrderInfo from "../../components/OrderInfo/OrderInfo";
-import CategorySelector from "../../components/CategorySelector/CategorySelector";
-import CarCards from "../../components/CarCards/CarCards";
 import categories from "../../assets/data/categories";
 import Total from "../../components/Total/Total";
 import AdditionalTab from "../../components/AdditionalTab/AdditionalTab";
 import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmation";
 import classNames from "classnames";
 import {useSelector} from "react-redux";
+import CarsTab from "../../components/CarsTab/CarsTab";
 
 function CreateOrder() {
 
@@ -44,10 +43,7 @@ function CreateOrder() {
                         </div>
                     )}
                     {(currentTab === 1) && (
-                        <div className="order_page_tab_cars">
-                            <CategorySelector type="carCategory" categories={categories[0].carCategory}/>
-                            <CarCards/>
-                        </div>
+                       <CarsTab/>
                     )}
                     {(currentTab === 2) && (
                         <div className="order_page_tab_additional">

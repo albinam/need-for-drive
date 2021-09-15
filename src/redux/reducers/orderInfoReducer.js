@@ -2,7 +2,10 @@ const initialState = {
 
     city:null,
     point: null,
-    car: null,
+    car: {
+        id:null,
+        name:null
+    },
     color: null,
     rentDates: {
         dateFrom: null,

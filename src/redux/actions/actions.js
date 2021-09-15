@@ -19,10 +19,13 @@ export function setCity(city) {
     }
 }
 
-export function setCar(car) {
+export function setCar(id, name) {
     return {
         type: 'SET_CAR',
-        payload: car
+        payload: {
+            id: id,
+            name: name
+        }
     }
 }
 
@@ -37,9 +40,9 @@ export function setDate(dateFrom, dateTo) {
     return {
         type: 'SET_DATE',
         payload: {
-            date:{
-                dateFrom:dateFrom,
-                dateTo:dateTo
+            date: {
+                dateFrom: dateFrom,
+                dateTo: dateTo
             }
         }
     }
