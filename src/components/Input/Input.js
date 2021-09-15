@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import './Input.scss';
 import PropTypes from "prop-types";
 
-function Input({placeholder, label, type}) {
+function Input({placeholder, label, type, value, handleChange}) {
     const [inputType, setInputType] = useState("text");
 
     const focusHandler = () => {
@@ -12,6 +12,9 @@ function Input({placeholder, label, type}) {
             setInputType("text");
         }
     }
+    const handleChangeInputValue = event => {
+       handleChange(event.target.value);
+    }
 
     return (
         <div className="form_line">
@@ -19,7 +22,7 @@ function Input({placeholder, label, type}) {
                 {label}
             </div>
             <div className="form_name">
-                <input type={inputType}  onBlur={() => setInputType("text")} onFocus={() => focusHandler()} className="form_input" placeholder={placeholder}/>
+                <input type={inputType} value={value} onChange={handleChangeInputValue} onBlur={() => setInputType("text")} onFocus={() => focusHandler()} className="form_input" placeholder={placeholder}/>
                 <a className="form_button">&#215;</a>
             </div>
         </div>
@@ -28,7 +31,9 @@ function Input({placeholder, label, type}) {
 Input.propTypes = {
     placeholder: PropTypes.string,
     label:PropTypes.string,
-    type:PropTypes.string
+    type:PropTypes.string,
+    value:PropTypes.string,
+    handleChange:PropTypes.func
 }
 
 export default Input;

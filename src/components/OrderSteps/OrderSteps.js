@@ -1,10 +1,18 @@
 import React from 'react';
 import './OrderSteps.scss';
 import classNames from "classnames";
-import PropTypes from "prop-types";
 import steps from "../../assets/data/steps";
+import {setStep} from "../../redux/actions/actions";
+import {useDispatch, useSelector} from "react-redux";
 
-function OrderSteps({step, setStepChange}) {
+
+function OrderSteps() {
+    const dispatch = useDispatch();
+    const step = useSelector(state => state.step);
+
+    const setStepChange = step => {
+        dispatch(setStep(step));
+    };
 
     return (
         <nav className="steps">
@@ -14,10 +22,6 @@ function OrderSteps({step, setStepChange}) {
             ))}
         </nav>
     )
-}
-OrderSteps.propTypes = {
-    step: PropTypes.number,
-    setStepChange: PropTypes.func
 }
 
 export default OrderSteps;

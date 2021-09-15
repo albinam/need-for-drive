@@ -3,13 +3,18 @@ import "./OrderInfoItem.scss";
 import PropTypes from "prop-types";
 
 function OrderInfoItem({element, value}) {
-    return (
-        <li className="item">
-            <div className="item_element">{element}</div>
-            <div className="item_dots"/>
-            <div className="item_value">{value}</div>
-        </li>
-    )
+    if (value) {
+        return (
+            <li className="item">
+                <div className="item_element">{element}</div>
+                <div className="item_dots"/>
+                <div className="item_value">{value}</div>
+            </li>
+        )
+    }
+    else{
+        return null;
+    }
 }
 OrderInfoItem.propTypes = {
     element: PropTypes.string,

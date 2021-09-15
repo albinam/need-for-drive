@@ -12,6 +12,13 @@ export function setPoint(point) {
     }
 }
 
+export function setCity(city) {
+    return {
+        type: 'SET_CITY',
+        payload: city
+    }
+}
+
 export function setCar(car) {
     return {
         type: 'SET_CAR',
