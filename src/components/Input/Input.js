@@ -2,9 +2,8 @@ import React, {useState} from "react";
 import './Input.scss';
 import PropTypes from "prop-types";
 
-function Input({placeholder, label, type, value, handleChange, disabled}) {
+function Input({placeholder, label, type, value, handleChange, disabled,clear}) {
     const [inputType, setInputType] = useState("text");
-    const [inputValue, setInputValue] = useState(value);
 
     const focusHandler = () => {
         if (type === "datetime-local") {
@@ -14,13 +13,7 @@ function Input({placeholder, label, type, value, handleChange, disabled}) {
         }
     }
 
-    const clear = () => {
-        setInputValue("");
-        handleChange(null);
-    }
-
     const handleChangeInputValue = event => {
-        setInputValue(event.target.value);
         handleChange(event.target.value);
     }
 
@@ -31,7 +24,7 @@ function Input({placeholder, label, type, value, handleChange, disabled}) {
             </div>
             <div className="form_name">
                 <input type={inputType}
-                       value={inputValue}
+                       value={value}
                        onChange={handleChangeInputValue}
                        onBlur={() => setInputType("text")}
                        onFocus={() => focusHandler()}
@@ -51,7 +44,8 @@ Input.propTypes = {
     type: PropTypes.string,
     value: PropTypes.string,
     handleChange: PropTypes.func,
-    disabled: PropTypes.string
+    disabled: PropTypes.string,
+    clear: PropTypes.func,
 }
 
 export default Input;
