@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import './Input.scss';
 import PropTypes from "prop-types";
 
-function Input({placeholder, label, type, value, handleChange}) {
+function Input({placeholder, label, type, value, handleChange, disabled}) {
     const [inputType, setInputType] = useState("text");
+    const [inputValue, setInputValue] = useState(value);
 
     const focusHandler = () => {
         if (type === "datetime-local") {
@@ -12,8 +13,15 @@ function Input({placeholder, label, type, value, handleChange}) {
             setInputType("text");
         }
     }
+
+    const clear = () => {
+        setInputValue("");
+        handleChange(null);
+    }
+
     const handleChangeInputValue = event => {
-       handleChange(event.target.value);
+        setInputValue(event.target.value);
+        handleChange(event.target.value);
     }
 
     return (
@@ -22,18 +30,28 @@ function Input({placeholder, label, type, value, handleChange}) {
                 {label}
             </div>
             <div className="form_name">
-                <input type={inputType} value={value} onChange={handleChangeInputValue} onBlur={() => setInputType("text")} onFocus={() => focusHandler()} className="form_input" placeholder={placeholder}/>
-                <a className="form_button">&#215;</a>
+                <input type={inputType}
+                       value={inputValue}
+                       onChange={handleChangeInputValue}
+                       onBlur={() => setInputType("text")}
+                       onFocus={() => focusHandler()}
+                       className="form_input"
+                       placeholder={placeholder}
+                       disabled={disabled}
+                />
+                <button onClick={clear} className="form_button">&#215;</button>
             </div>
         </div>
     )
 }
+
 Input.propTypes = {
     placeholder: PropTypes.string,
-    label:PropTypes.string,
-    type:PropTypes.string,
-    value:PropTypes.string,
-    handleChange:PropTypes.func
+    label: PropTypes.string,
+    type: PropTypes.string,
+    value: PropTypes.string,
+    handleChange: PropTypes.func,
+    disabled: PropTypes.string
 }
 
 export default Input;

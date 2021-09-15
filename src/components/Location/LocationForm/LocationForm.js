@@ -23,7 +23,7 @@ function LocationForm() {
             <Input type="text" value={order.city} handleChange={onChangeCity} label="Город"
                    placeholder="Начните вводить город ..."/>
             <Input type="text" value={order.point} handleChange={onChangePoint} label="Пункт выдачи"
-                   placeholder="Начните вводить пункт ..."/>
+                   placeholder="Начните вводить пункт ..." disabled={!(order.city)}/>
         </div>
     );
 }

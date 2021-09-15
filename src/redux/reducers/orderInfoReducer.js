@@ -1,6 +1,7 @@
 const initialState = {
-    city:"",
-    point: "",
+
+    city:null,
+    point: null,
     car: null,
     color: null,
     rentDates: {
@@ -15,37 +16,37 @@ export default function orderStepsReducer(state = initialState, action) {
         case 'SET_POINT':
             return {
                 ...state,
-                point: action.payload.point
+                point: action.payload
             };
         case 'SET_CITY':
             return {
                 ...state,
-                city: action.payload.city
+                city: action.payload
             };
         case 'SET_CAR':
             return {
                 ...state,
-                car: action.payload.car
+                car: action.payload
             };
         case 'SET_COLOR':
             return {
                 ...state,
-                color: action.payload.color
+                color: action.payload
             };
         case 'SET_TARIFF':
             return {
                 ...state,
-                tariff: action.payload.tariff
+                tariff: action.payload
             };
         case 'SET_RENT_DATES':
             return {
                 ...state,
-                rentDates: action.payload.rentDates
+                rentDates: action.payload
             };
         case 'SET_ADDITIONS':
             return {
                 ...state,
-                additions: action.payload.additions
+                additions: action.payload
             };
         default:
             return state;

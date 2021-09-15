@@ -16,12 +16,23 @@ function OrderInfo({setOrderConfirmation}) {
         dispatch(setStep(step));
     };
 
+    const cityPointInfo = () => {
+        let info = null;
+        if (order.city) {
+            info = order.city;
+            if (order.point) {
+                info = order.city + ", " + order.point;
+            }
+        }
+        return info;
+    }
+
     return (
         <div className="order_info_container">
             <div className="order_info">
                 <div className="order_info_title">Ваш заказ:</div>
                 <ul className="order_info_items">
-                    <OrderInfoItem value={order.city+", "+order.point} element="Пункт выдачи"/>
+                    <OrderInfoItem value={cityPointInfo()} element="Пункт выдачи"/>
                     <OrderInfoItem value={order.car} element="Модель"/>
                     <OrderInfoItem value={order.color} element="Цвет"/>
                     <OrderInfoItem value={order.rentDates.dateTo} element="Длительность аренды"/>
