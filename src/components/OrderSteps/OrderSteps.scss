@@ -16,6 +16,9 @@
     color: $color-gray-dark;
     margin-right: 38px;
     position: relative;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 
     &.active{
       color: $color-accent;
