@@ -61,3 +61,10 @@ export function setAdditions(additions) {
         payload: additions
     }
 }
+
+export function deleteAdditions(additions) {
+    return {
+        type: 'DELETE_ADDITIONS',
+        payload: additions
+    }
+}

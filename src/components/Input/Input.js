@@ -44,7 +44,7 @@ Input.propTypes = {
     type: PropTypes.string,
     value: PropTypes.string,
     handleChange: PropTypes.func,
-    disabled: PropTypes.string,
+    disabled: PropTypes.bool,
     clear: PropTypes.func,
 }
 

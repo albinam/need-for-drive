@@ -13,7 +13,7 @@ function OrderInfo({setOrderConfirmation}) {
     const step = useSelector(state => state.step);
     const order = useSelector(state => state.order);
     const dispatch = useDispatch();
-    const disabledButton = (disabled(step+1, order))? 'disabled':null;
+    const disabledButton = (disabled(step + 1, order)) ? 'disabled' : null;
 
     const setStepChange = step => {
         dispatch(setStep(step));
@@ -39,19 +39,19 @@ function OrderInfo({setOrderConfirmation}) {
                     <OrderInfoItem value={order.car.name} element="Модель"/>
                     <OrderInfoItem value={order.color} element="Цвет"/>
                     <OrderInfoItem value={order.rentDates.dateTo} element="Длительность аренды"/>
-                    <OrderInfoItem value={order.tariff} element="Тариф"/>
+                    <OrderInfoItem value={(order.tariff) ? (order.tariff.split(",")[0]) : null} element="Тариф"/>
                     {order.additions.map(
-                        (service => {
-                            return (
-                                <OrderInfoItem key ={service} value="Да" element={service}/>
-                            )
-                        }))}
+                            (service => {
+                                return (
+                                    <OrderInfoItem key={service} value="Да" element={service.split(",")[0]}/>
+                                )
+                            }))}
                 </ul>
                 <div className="order_info_price">Цена: {order.price} &#8381;</div>
-                {(stepsButtons[step].id < 3)?
-                <button onClick={() => setStepChange(stepsButtons[step].id + 1)}
-                        className={classNames("content_button", disabledButton)}
-                        disabled={disabled(step+1, order)}>{stepsButtons[step].buttonName}</button>
+                {(stepsButtons[step].id < 3) ?
+                    <button onClick={() => setStepChange(stepsButtons[step].id + 1)}
+                            className={classNames("content_button", disabledButton)}
+                            disabled={disabled(step + 1, order)}>{stepsButtons[step].buttonName}</button>
                     :
                     <button onClick={() => setOrderConfirmation(true)} className="content_button">Заказать</button>}
             </div>

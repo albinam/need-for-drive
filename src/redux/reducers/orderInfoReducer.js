@@ -49,7 +49,12 @@ export default function orderStepsReducer(state = initialState, action) {
         case 'SET_ADDITIONS':
             return {
                 ...state,
-                additions: action.payload
+                additions:[...state.additions, action.payload]
+            };
+        case 'DELETE_ADDITIONS':
+            return {
+                ...state,
+                additions:state.additions.filter(item => item !== action.payload)
             };
         default:
             return state;
