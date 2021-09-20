@@ -1,14 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import './Checkbox.scss';
 import PropTypes from "prop-types";
 
-function Checkbox({additional}) {
-
-    const [selected, setSelected] = useState(Array(additional.length).fill(false));
-    const handleClick = service => {
-        setSelected(selected.map((val, index) => index === service ? !val : val));
-    };
+function Checkbox({additional, selected, handleClick}) {
 
     return (
         <div className="checkbox_selector">
@@ -16,11 +11,11 @@ function Checkbox({additional}) {
                 (service, index) => {
                     return (
                         <div key={index}
-                             className={classNames("checkbox_selector_item", (selected[index]) ? "active" : null)}>
-                            <input type="checkbox" name="checkbox_selector_item_box" checked={selected[index]}  onChange={() => handleClick(index)} />
+                             className={classNames("checkbox_selector_item", (selected.includes(service)) ? "active" : null)}>
+                            <input type="checkbox" name="checkbox_selector_item_box" checked={selected[selected.indexOf(service)]}  onChange={() => handleClick(service)} />
                             <label
                                 className="checkbox_selector_item_label"
-                                onClick={() => handleClick(index)}
+                                onClick={() => handleClick(service)}
                             >
                                 {service}
                             </label>
@@ -31,7 +26,9 @@ function Checkbox({additional}) {
     )
 }
 Checkbox.propTypes = {
-    additional: PropTypes.array
+    additional: PropTypes.array,
+    handleClick: PropTypes.func,
+    selected:PropTypes.array
 }
 
 export default Checkbox;

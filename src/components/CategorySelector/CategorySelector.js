@@ -1,12 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import './CategorySelector.scss';
 import PropTypes from "prop-types";
 
-function CategorySelector({categories, type}) {
-
-    const [selected, setSelected] = useState();
-    const handleClick = category => setSelected(category);
+function CategorySelector({categories, type, handleClick, selected}) {
 
     return (
         <div className={classNames("category_selector", type)}>
@@ -15,7 +12,7 @@ function CategorySelector({categories, type}) {
                     return (
                         <div key={index}
                              className={classNames("category_selector_item", (type) ? type : null, (category === selected) ? "active" : null)}>
-                            <input key={category.id} type="radio" name="category_selector_item_radio" onChange={() => handleClick(category)} checked={category === selected}/>
+                            <input key={category.id} type="radio" className={classNames("category_selector_item_radio",(category === selected) ? "active" : null)} onChange={() => handleClick(category)}/>
                             <label
                                 key={category.category}
                                 className="category_selector_item_label"
@@ -31,7 +28,9 @@ function CategorySelector({categories, type}) {
 }
 CategorySelector.propTypes = {
     categories: PropTypes.array,
-    type:PropTypes.string
+    type:PropTypes.string,
+    handleClick: PropTypes.func,
+    selected:PropTypes.string
 }
 
 export default CategorySelector;

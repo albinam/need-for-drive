@@ -37,7 +37,7 @@
     input {
       display: none;
 
-      &:checked + label {
+      &.active + label {
         color: $color-main;
 
         &::before {
