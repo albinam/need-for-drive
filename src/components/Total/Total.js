@@ -1,33 +1,28 @@
 import React from 'react';
 import './Total.scss';
-import car1 from '../../assets/images/cars/car1.png'
+import {useSelector} from "react-redux";
+import cars from "../../assets/data/cars";
 
-const car = {
-    name: "Hyndai, i30 N",
-    number: "K 761 HA 73",
-    fuel: "100%",
-    available: "12.06.2019 12:00",
-    img: car1,
-};
 
 function Total() {
-
+    const order = useSelector(state => state.order);
     return (
         <div className="total">
             <div className="total_description">
-                <div className="total_car">{car.name}</div>
-                <div className="total_number">{car.number}</div>
+                <div className="total_car">{order.car.name}</div>
+                <div className="total_number">K 761 HA 73</div>
                 <div className="total_info">
+
                     <div className="total_text_bold">Топливо&nbsp;</div>
-                    <div className="total_text_light">{car.fuel}</div>
+                    <div className="total_text_light">100%</div>
                 </div>
                 <div className="total_info">
                     <div className="total_text_bold">Доступна с&nbsp;</div>
-                    <div className="total_text_light">{car.available}</div>
+                    <div className="total_text_light">{order.dateFrom.format("DD.MM.YYYY HH:mm")}</div>
                 </div>
             </div>
             <div className="total_image">
-                <img src={car.img} alt={car.name}/>
+                <img src={cars[order.car.id].img} alt={order.car.name}/>
             </div>
         </div>
     );

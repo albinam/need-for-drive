@@ -48,7 +48,7 @@ function OrderInfo({setOrderConfirmation}) {
                             }))}
                 </ul>
                 <div className="order_info_price">Цена: {order.price} &#8381;</div>
-                {(stepsButtons[step].id < 4) ?
+                {(stepsButtons[step].id < 3) ?
                     <button onClick={() => setStepChange(stepsButtons[step].id + 1)}
                             className={classNames("content_button", disabledButton)}
                             disabled={disabled(step + 1, order)}>{stepsButtons[step].buttonName}</button>
