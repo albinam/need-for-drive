@@ -1,16 +1,14 @@
 const initialState = {
 
-    city:null,
-    point: null,
+    city:"",
+    point: "",
     car: {
         id:null,
         name:null
     },
     color: null,
-    rentDates: {
-        dateFrom: null,
-        dateTo: null
-    },
+    dateFrom: "",
+    dateTo: "",
     tariff: null,
     additions: []
 }
@@ -41,10 +39,15 @@ export default function orderStepsReducer(state = initialState, action) {
                 ...state,
                 tariff: action.payload
             };
-        case 'SET_RENT_DATES':
+        case 'SET_DATE_FROM':
             return {
                 ...state,
-                rentDates: action.payload
+                dateFrom: action.payload
+            };
+        case 'SET_DATE_TO':
+            return {
+                ...state,
+                dateTo: action.payload
             };
         case 'SET_ADDITIONS':
             return {

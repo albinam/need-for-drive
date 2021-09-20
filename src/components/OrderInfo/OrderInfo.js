@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import stepsButtons from "../../assets/data/stepsButtons";
 import {useDispatch, useSelector} from "react-redux";
 import {setStep} from "../../redux/actions/actions";
-import {disabled} from "../../assets/utils/utils";
+import {disabled, getDuration} from "../../assets/utils/utils";
 import classNames from "classnames";
 
 function OrderInfo({setOrderConfirmation}) {
@@ -38,7 +38,7 @@ function OrderInfo({setOrderConfirmation}) {
                     <OrderInfoItem value={cityPointInfo()} element="Пункт выдачи"/>
                     <OrderInfoItem value={order.car.name} element="Модель"/>
                     <OrderInfoItem value={order.color} element="Цвет"/>
-                    <OrderInfoItem value={order.rentDates.dateTo} element="Длительность аренды"/>
+                    <OrderInfoItem value={getDuration(order)} element="Длительность аренды"/>
                     <OrderInfoItem value={(order.tariff) ? (order.tariff.split(",")[0]) : null} element="Тариф"/>
                     {order.additions.map(
                             (service => {
@@ -48,7 +48,7 @@ function OrderInfo({setOrderConfirmation}) {
                             }))}
                 </ul>
                 <div className="order_info_price">Цена: {order.price} &#8381;</div>
-                {(stepsButtons[step].id < 3) ?
+                {(stepsButtons[step].id < 4) ?
                     <button onClick={() => setStepChange(stepsButtons[step].id + 1)}
                             className={classNames("content_button", disabledButton)}
                             disabled={disabled(step + 1, order)}>{stepsButtons[step].buttonName}</button>

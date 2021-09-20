@@ -1,17 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import './Input.scss';
 import PropTypes from "prop-types";
 
-function Input({placeholder, label, type, value, handleChange, disabled,clear}) {
-    const [inputType, setInputType] = useState("text");
-
-    const focusHandler = () => {
-        if (type === "datetime-local") {
-            setInputType("datetime-local");
-        } else {
-            setInputType("text");
-        }
-    }
+function Input({placeholder, label, value, handleChange, disabled,clear}) {
 
     const handleChangeInputValue = event => {
         handleChange(event.target.value);
@@ -23,11 +14,9 @@ function Input({placeholder, label, type, value, handleChange, disabled,clear}) 
                 {label}
             </div>
             <div className="form_name">
-                <input type={inputType}
+                <input type="text"
                        value={value}
                        onChange={handleChangeInputValue}
-                       onBlur={() => setInputType("text")}
-                       onFocus={() => focusHandler()}
                        className="form_input"
                        placeholder={placeholder}
                        disabled={disabled}
@@ -41,7 +30,6 @@ function Input({placeholder, label, type, value, handleChange, disabled,clear}) 
 Input.propTypes = {
     placeholder: PropTypes.string,
     label: PropTypes.string,
-    type: PropTypes.string,
     value: PropTypes.string,
     handleChange: PropTypes.func,
     disabled: PropTypes.bool,

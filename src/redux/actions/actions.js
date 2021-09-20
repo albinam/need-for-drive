@@ -36,15 +36,17 @@ export function setColor(color) {
     }
 }
 
-export function setDate(dateFrom, dateTo) {
+export function setDateFrom(dateFrom) {
     return {
-        type: 'SET_DATE',
-        payload: {
-            date: {
-                dateFrom: dateFrom,
-                dateTo: dateTo
-            }
-        }
+        type: 'SET_DATE_FROM',
+        payload: dateFrom
+    }
+}
+
+export function setDateTo(dateTo) {
+    return {
+        type: 'SET_DATE_TO',
+        payload: dateTo
     }
 }
 
