@@ -25,7 +25,6 @@
     margin-left: 16px;
   }
 
-
   &_image {
     position: absolute;
     object-fit: cover;
@@ -47,11 +46,6 @@
   }
 }
 
-@media (max-width: $desktopMinSize) {
-  .card {
-    width: 100%;
-  }
-}
 @media (max-width: $tabletSize) {
   .card {
     &_image {

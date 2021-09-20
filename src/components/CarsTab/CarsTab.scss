@@ -17,7 +17,7 @@
 }
 
 @media (max-width: $mobileSizeW) {
-  .order_page_cars {
+  .order_page_tab_cars {
     overflow: visible;
     height: fit-content;
     align-content: center;
@@ -27,7 +27,7 @@
 
 @media (min-width: $desktopSize) {
 
-  .order_page_cars {
+  .order_page_tab_cars {
     padding-right: 64px;
   }
 }

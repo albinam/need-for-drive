@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    margin-left: 32px;
+    margin-left: 64px;
     height: 100%;
 
     &_location {
@@ -54,14 +54,14 @@
     width: calc(100vw - 96px);
   }
   .order_page_tab_location {
-    margin-left: 32px;
-  }
-  .order_page_tab_cars {
-    padding-right: 64px;
+    margin-left: 0;
   }
 }
 
 @media (max-width: $tabletSize) {
+  .order_page_tab{
+    margin-left: 32px;
+  }
   .order_page_content {
     width: calc(100vw - 96px);
   }
@@ -98,13 +98,6 @@
       &_location {
         margin-left: 0;
       }
-
-      &_cars {
-        overflow: visible;
-        height: fit-content;
-        align-content: center;
-        padding-right: 16px;
-      }
     }
   }
 }
@@ -125,10 +118,6 @@
       top: 128px;
       width: 1024px;
       margin-left: 0;
-
-      &_cars {
-        padding-right: 64px;
-      }
 
       &_additional {
         flex: 1;
