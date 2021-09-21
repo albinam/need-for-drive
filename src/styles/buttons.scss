@@ -46,17 +46,17 @@
   color: $color-main-white;
   cursor: pointer;
 
-  &.green {
-    background: linear-gradient(90deg, $color-btn-slide1-start 0%, $color-btn-slide1-end 100%);
+  &.light-green {
+    background: linear-gradient(90deg, $color-book-button-start 2.61%, $color-book-button-end 112.6%);
     background-blend-mode: darken;
 
     &:hover {
-      background: linear-gradient(90deg, darken($color-btn-slide1-start, 10%) 0%, darken($color-btn-slide1-end, 10%) 100%);
+      background: linear-gradient(90deg, darken($color-book-button-start, 10%) 2.61%, darken($color-book-button-end, 10%) 112.6%);
       background-blend-mode: darken;
     }
 
     &:active {
-      background: linear-gradient(90deg, darken($color-btn-slide1-start, 20%) 0%, darken($color-btn-slide1-end, 20%) 100%);
+      background: linear-gradient(90deg, darken($color-book-button-start, 20%) 2.61%, darken($color-book-button-end, 20%) 112.6%);
       background-blend-mode: darken;
     }
   }

@@ -1,0 +1,70 @@
+@import "../../styles/colors";
+@import "../../styles/vars";
+
+.form {
+
+  &_input {
+    width: 224px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $color-gray-dark;
+    margin-bottom: 16px;
+  }
+
+  &_label {
+    text-align: right;
+    width: 91px;
+  }
+
+  &_line {
+    display: flex;
+    flex-direction: row;
+    font-family: $fontLight;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-main;
+  }
+
+  &_button{
+    margin-left: -8px;
+    color:$color-main;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &_name {
+    margin-left: 16px;
+  }
+}
+@media (max-width: $tabletSize) {
+
+  .form_input {
+    width: 180px;
+  }
+}
+
+@media (max-width: $mobileSizeW) and (min-width: 400px) {
+
+  .form {
+    &_line {
+      flex-direction: column;
+      width: 100%;
+      margin-right: 8px;
+      justify-content: center;
+    }
+    &_input {
+      width: 90%;
+    }
+    &_label{
+      text-align: left;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    &_name {
+      margin-left: 0;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import "src/styles/vars";
+@import "src/styles/colors";
+
+.total {
+  display: flex;
+  flex-direction: row;
+  color: $color-main;
+
+  &_description {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    min-width: 262px;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_car {
+    font-family: $fontRegular;
+    font-size: 18px;
+    line-height: 21px;
+    width: fit-content;
+  }
+
+  &_number {
+    font-family: $fontMedium;
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid $color-main;
+    border-radius: 4px;
+    margin-top: 8px;
+    width: fit-content;
+    padding: 4px 8px;
+  }
+
+  &_text_bold {
+    font-family: $fontBold;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 8px;
+    width: fit-content;
+  }
+
+  &_text_light {
+    font-family: $fontLight;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 8px;
+    width: fit-content;
+  }
+
+  &_image {
+    min-width: 256px;
+  }
+}
+
+@media (max-width: 900px) {
+  .total {
+    &_image {
+      min-width: 200px;
+      img{
+        width: 200px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  .total {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .total {
+    align-items: center;
+
+    &_description {
+      align-items: center;
+      flex: 1;
+    }
+
+    &_text_bold {
+      text-align: center;
+    }
+
+    &_text_light {
+      text-align: center;
+    }
+  }
+}

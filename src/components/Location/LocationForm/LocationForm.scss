@@ -1,0 +1,15 @@
+@import "../../../styles/colors";
+@import "../../../styles/vars";
+
+.location_form {
+  font-family: $fontLight;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-main;
+}
+@media (max-width: $mobileSizeW) and (min-width: 400px) {
+  .location_form {
+    display: flex;
+    flex-direction: row;
+  }
+}

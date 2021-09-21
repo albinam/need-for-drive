@@ -1,0 +1,131 @@
+@import "src/styles/vars";
+@import "src/styles/colors";
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: white;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-left: 1px solid gray;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0ec261;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-clip: content-box;
+}
+
+.order_page {
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  position: fixed;
+
+  &_content {
+    flex-direction: column;
+    width: calc(100vw - 64px);
+  }
+
+  &_tab {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-left: 64px;
+    height: 100%;
+
+    &_location {
+      flex-direction: column;
+      margin-left: 64px;
+      margin-top: 32px;
+    }
+
+    &_total {
+      margin-top: 32px;
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: $desktopMinSize) {
+  .order_page_content {
+    width: calc(100vw - 96px);
+  }
+  .order_page_tab_location {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .order_page_tab{
+    margin-left: 32px;
+  }
+  .order_page_content {
+    width: calc(100vw - 96px);
+  }
+  .order_page_tab {
+    height: fit-content;
+  }
+  .order_page_tab_total {
+    margin-left: -16px;
+    flex: 0;
+  }
+}
+@media (max-width: 830px) {
+  .total {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .order_page {
+    overflow: auto;
+
+    &.opened {
+      overflow: hidden;
+    }
+
+    &_content {
+      width: calc(100vw - 50px);
+    }
+
+    &_tab {
+      flex-direction: column;
+      margin-left: -34px;
+
+      &_location {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktopSize) {
+
+  .order_page {
+    position: unset;
+
+    &_content {
+      margin-left: auto;
+      margin-right: auto;
+      width: 1024px;
+    }
+
+    &_tab {
+      position: fixed;
+      top: 128px;
+      width: 1024px;
+      margin-left: 0;
+
+      &_additional {
+        flex: 1;
+      }
+
+      &_location {
+        margin-left: 0;
+      }
+    }
+  }
+}

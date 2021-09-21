@@ -1,0 +1,34 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.dates_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+
+  &_date {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+
+    &_label {
+      width: 18px;
+      font-family: $fontLight;
+      font-size: 14px;
+      line-height: 16px;
+      color: $color-main;
+      align-self: flex-end;
+      text-align: right;
+    }
+  }
+
+  &_label {
+    margin-top: 32px;
+    font-family: $fontLight;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-main;
+    margin-bottom: 16px;
+  }
+}
+

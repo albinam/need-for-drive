@@ -1,0 +1,90 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.steps {
+  padding: 8px 0 7px 64px;
+  margin-top: 32px;
+  display: flex;
+  border-top: 1px solid $color-gray-light;
+  border-bottom: 1px solid $color-gray-light;
+  width: calc(100vw - 64px);
+
+  &_link {
+    font-family: $fontBold;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-gray-dark;
+    margin-right: 38px;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &.active{
+      color: $color-accent;
+    }
+
+    &.filled{
+      color: $color-main;
+    }
+
+    &:not(:first-child)::before {
+      content: '\25BA';
+      display: inline-block;
+      font-size: 8px;
+      position: absolute;
+      top: 0;
+      color:$color-gray-dark;
+      right: calc(100% + 16px);
+    }
+  }
+}
+
+@media (max-width: $desktopMinSize) {
+  .steps {
+    width: calc(100vw - 64px);
+    padding: 8px 0 7px 64px;
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .steps {
+    width: calc(100vw - 86px);
+    padding: 8px 0 7px 32px;
+  }
+}
+
+
+@media (max-width: $mobileSizeW) {
+  .steps {
+    margin-top: 48px;
+    padding: 0 0 16px 0;
+    width: 100vw;
+    margin-left: -50px;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+
+    &_link {
+      margin-right: 0;
+      margin-top: 16px;
+
+      &:not(:first-child)::before {
+        content: '\25BC';
+        top:-16px;
+        align-content: center;
+        left:calc((100% - 8px )/2);
+        display: block;
+      }
+    }
+  }
+}
+@media (min-width: $desktopSize) {
+
+  .steps {
+    align-self: stretch;
+    padding-left: calc((100vw - 1024px - 64px)/2);
+    position: fixed;
+    left:64px;
+  }
+}

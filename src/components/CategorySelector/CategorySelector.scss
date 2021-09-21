@@ -1,0 +1,93 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.category_selector {
+  display: flex;
+  flex-direction: row;
+  margin-top: 32px;
+  font-family: $fontLight;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-gray-dark;
+
+  &.carColor {
+    margin-top: 16px;
+  }
+
+  &.price {
+    flex-direction: column;
+  }
+
+  &_item {
+    flex-direction: row;
+    display: flex;
+    margin-left: 20px;
+
+    &.price {
+      &:not(:first-child) {
+        margin-top: 8px;
+        margin-left: 20px;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: 36px;
+    }
+
+    input {
+      display: none;
+
+      &.active + label {
+        color: $color-main;
+
+        &::before {
+          border: 3px solid $color-accent;
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid $color-gray-dark;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        transform: translate(-100%, -50%);
+        transition: border 0.1s ease-in;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .category_selector {
+    justify-content: center;
+    font-size: 12px;
+
+    &.carColor {
+      justify-content: left;
+      flex-direction: column;
+      font-size: 14px;
+    }
+    &.price {
+      font-size: 14px;
+    }
+
+    &_item {
+      &.carColor {
+        &:not(:first-child) {
+          margin-top: 8px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

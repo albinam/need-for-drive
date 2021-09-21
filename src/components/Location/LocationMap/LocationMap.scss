@@ -1,0 +1,50 @@
+@import "../../../styles/colors";
+@import "../../../styles/vars";
+
+.location-map {
+  margin-top: 29px;
+  margin-right: 122px;
+
+  &_label {
+    font-family: $fontLight;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-main;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    margin-top: 16px;
+  }
+}
+@media (max-height: 640px) {
+
+  .location-map img {
+    width: 70%;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: $desktopMinSize) {
+  .location-map {
+    margin-right: 64px;
+
+    img {
+      max-height: 300px;
+    }
+  }
+}
+
+@media (max-width: $mobileSizeW) {
+  .location-map {
+    padding-right: 16px;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: $desktopSize) {
+  .location-map {
+    margin-right: 64px;
+  }
+}

@@ -1,0 +1,34 @@
+@import "src/styles/colors";
+@import "src/styles/vars";
+
+.item {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  font-family: $fontLight;
+  font-size: 14px;
+  line-height: 16px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  &_element {
+    white-space: nowrap;
+    align-self: flex-end;
+    width: fit-content;
+  }
+
+  &_dots {
+    flex-grow: 1;
+    border-bottom: 2px dotted $color-gray-dark;
+    margin-left: 8px;
+    margin-right: 8px;
+    content: "";
+  }
+
+  &_value {
+    text-align: right;
+    color: $color-gray-dark;
+    max-width: 101px;
+    min-width: 35px;
+  }
+}
