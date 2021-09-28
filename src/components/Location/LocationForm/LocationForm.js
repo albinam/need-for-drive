@@ -4,6 +4,7 @@ import Input from "../../Input/Input";
 import {useDispatch, useSelector} from "react-redux";
 import {setPoint, setCity} from "../../../redux/actions/actions";
 
+
 function LocationForm() {
 
     const dispatch = useDispatch();
