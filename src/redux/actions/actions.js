@@ -70,3 +70,15 @@ export function deleteAdditions(additions) {
         payload: additions
     }
 }
+
+export function setLatLon(lat, lon) {
+    return {
+        type: 'SET_LATLON',
+        payload: {
+            latitude:lat,
+            longitude:lon
+        }
+    }
+}
+
+

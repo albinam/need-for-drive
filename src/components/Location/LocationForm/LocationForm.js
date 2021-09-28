@@ -4,7 +4,6 @@ import Input from "../../Input/Input";
 import {useDispatch, useSelector} from "react-redux";
 import {setPoint, setCity} from "../../../redux/actions/actions";
 
-
 function LocationForm() {
 
     const dispatch = useDispatch();
@@ -14,13 +13,13 @@ function LocationForm() {
 
     const onChangeCity = value => {
         dispatch(setCity(value));
-        if(value!=null)
+        if (value != null)
             changeCity(value);
     };
 
     const onChangePoint = value => {
         dispatch(setPoint(value));
-        if(value!=null)
+        if (value != null)
             changePoint(value)
     };
 

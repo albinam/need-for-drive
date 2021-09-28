@@ -12,15 +12,30 @@
     color: $color-main;
   }
 
-  img {
+  &_map {
     width: 100%;
-    object-fit: cover;
+    height: 50vh;
     margin-top: 16px;
   }
+
+  &_marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: white;
+    border: 5px solid $color-accent;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
+
 @media (max-height: 640px) {
 
-  .location-map img {
+  .location-map_map {
     width: 70%;
     max-height: 300px;
   }
@@ -30,7 +45,7 @@
   .location-map {
     margin-right: 64px;
 
-    img {
+    &_map {
       max-height: 300px;
     }
   }

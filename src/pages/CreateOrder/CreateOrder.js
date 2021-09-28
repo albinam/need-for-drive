@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Menu from "../../components/Menu/Menu";
 import Header from "../../components/Header/Header";
 import "./CreateOrder.scss"
@@ -11,14 +11,22 @@ import Total from "../../components/Total/Total";
 import AdditionalTab from "../../components/AdditionalTab/AdditionalTab";
 import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmation";
 import classNames from "classnames";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import CarsTab from "../../components/CarsTab/CarsTab";
+import {usePosition} from "../../assets/utils/usePosition";
+import {setLatLon} from "../../redux/actions/actions";
 
 function CreateOrder() {
 
     const currentTab = useSelector(state => state.step);
     const [orderConfirmation, setConfirmation] = useState(false);
     const confirm = (orderConfirmation)? "opened" : null;
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        usePosition().then(
+            position => dispatch(setLatLon(position.coords.latitude,position.coords.longitude)))
+    })
 
     const setOrderConfirmation = confirmation => {
         setConfirmation(confirmation);
