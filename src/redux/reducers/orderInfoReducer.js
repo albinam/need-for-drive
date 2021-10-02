@@ -1,6 +1,6 @@
 const initialState = {
-    city:"",
-    point: "",
+    city:null,
+    point: null,
     car: {
         id:null,
         name:null

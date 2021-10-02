@@ -17,20 +17,6 @@
     height: 50vh;
     margin-top: 16px;
   }
-
-  &_marker {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s;
-    background-color: white;
-    border: 5px solid $color-accent;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
 }
 
 @media (max-height: 640px) {

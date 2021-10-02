@@ -1,6 +1,7 @@
+import {setCoords} from "../../redux/actions/actions";
 
 
-export const usePosition = () => {
+export const getUserPosition = () => {
     return new Promise((resolve, reject) => {
         if (!navigator.geolocation) {
             reject(new Error('Определение геолокации не поддерживается'));
@@ -13,3 +14,12 @@ export const usePosition = () => {
         });
     })
 };
+
+export const dispatchUserCoords = () => {
+    return (dispatch) => {
+        getUserPosition().then(r =>
+            dispatch(setCoords(r.coords.latitude,r.coords.longitude)))
+    }
+}
+
+

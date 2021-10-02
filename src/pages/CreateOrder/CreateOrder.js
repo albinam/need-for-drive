@@ -13,27 +13,29 @@ import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmat
 import classNames from "classnames";
 import {useDispatch, useSelector} from "react-redux";
 import CarsTab from "../../components/CarsTab/CarsTab";
-import {usePosition} from "../../assets/utils/usePosition";
-import {setLatLon} from "../../redux/actions/actions";
+import {dispatchUserCoords} from "../../assets/utils/userPositionServices";
+import {getCities, getPoints} from "../../assets/utils/locationApi";
 
 function CreateOrder() {
 
     const currentTab = useSelector(state => state.step);
+    const points = useSelector(state => state.apiInfo.points);
     const [orderConfirmation, setConfirmation] = useState(false);
-    const confirm = (orderConfirmation)? "opened" : null;
+    const confirm = (orderConfirmation) ? "opened" : null;
     const dispatch = useDispatch();
 
     useEffect(() => {
-        usePosition().then(
-            position => dispatch(setLatLon(position.coords.latitude,position.coords.longitude)))
-    })
+        dispatch(dispatchUserCoords())
+        dispatch(getPoints());
+        dispatch(getCities());
+    },[1])
 
     const setOrderConfirmation = confirmation => {
         setConfirmation(confirmation);
     };
 
     return (
-        <div className={classNames("order_page",confirm)}>
+        <div className={classNames("order_page", confirm)}>
             {(orderConfirmation) && (
                 <div className="order_page_confirmation">
                     <OrderConfirmation setOrderConfirmation={setOrderConfirmation}/>
@@ -47,11 +49,11 @@ function CreateOrder() {
                     {(currentTab === 0) && (
                         <div className="order_page_tab_location">
                             <LocationForm/>
-                            <LocationMap/>
+                            {(points.length!==0)&& <LocationMap/>}
                         </div>
                     )}
                     {(currentTab === 1) && (
-                       <CarsTab/>
+                        <CarsTab/>
                     )}
                     {(currentTab === 2) && (
                         <div className="order_page_tab_additional">

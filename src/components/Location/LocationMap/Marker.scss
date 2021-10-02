@@ -1,0 +1,15 @@
+@import "../../../styles/colors";
+@import "../../../styles/vars";
+
+.location-map_marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+  border: 5px solid $color-accent;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

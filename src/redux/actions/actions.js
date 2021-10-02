@@ -71,13 +71,41 @@ export function deleteAdditions(additions) {
     }
 }
 
-export function setLatLon(lat, lon) {
+export function setCoords(lat, lon) {
     return {
-        type: 'SET_LATLON',
+        type: 'SET_COORDS',
         payload: {
             latitude:lat,
-            longitude:lon
+            longitude:lon,
         }
+    }
+}
+
+export function setApiInfoPoints(point) {
+    return {
+        type: 'SET_POINTS',
+        payload: point
+    }
+}
+
+export function setApiInfoCities(city) {
+    return {
+        type: 'SET_CITIES',
+        payload: city
+    }
+}
+
+export function setApiInfoCitiesCoords(coords) {
+    return {
+        type: 'SET_CITIESCOORDS',
+        payload: coords
+    }
+}
+
+export function setMarker(marker) {
+    return {
+        type: 'SET_MARKERS',
+        payload: marker
     }
 }
 

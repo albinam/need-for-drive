@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {setApiInfoCities, setApiInfoPoints} from "../../redux/actions/actions";
 
 const myAxios = axios.create({
     baseURL: 'https://api-factory.simbirsoft1.com/api',
@@ -8,9 +9,19 @@ const myAxios = axios.create({
     }
 });
 export const getCities = () => {
-    return  myAxios.get('/db/city')
+    return (dispatch) => {
+        myAxios.get('/db/city')
+            .then((response) => {
+                dispatch(setApiInfoCities(response.data.data));
+            })
+    }
 }
 
 export const getPoints = () => {
-    return  myAxios.get('/db/point')
+    return (dispatch) => {
+        myAxios.get('/db/point')
+            .then((response) => {
+                dispatch(setApiInfoPoints(response.data.data));
+            })
+    }
 }
