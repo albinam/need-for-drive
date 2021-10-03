@@ -3,8 +3,6 @@ import Menu from "../../components/Menu/Menu";
 import Header from "../../components/Header/Header";
 import "./CreateOrder.scss"
 import OrderSteps from "../../components/OrderSteps/OrderSteps";
-import LocationForm from "../../components/Location/LocationForm/LocationForm";
-import LocationMap from "../../components/Location/LocationMap/LocationMap";
 import OrderInfo from "../../components/OrderInfo/OrderInfo";
 import categories from "../../assets/data/categories";
 import Total from "../../components/Total/Total";
@@ -13,19 +11,20 @@ import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmat
 import classNames from "classnames";
 import {useSelector} from "react-redux";
 import CarsTab from "../../components/CarsTab/CarsTab";
+import LocationTab from "../../components/Location/LocationTab";
 
 function CreateOrder() {
 
     const currentTab = useSelector(state => state.step);
     const [orderConfirmation, setConfirmation] = useState(false);
-    const confirm = (orderConfirmation)? "opened" : null;
+    const confirm = (orderConfirmation) ? "opened" : null;
 
     const setOrderConfirmation = confirmation => {
         setConfirmation(confirmation);
     };
 
     return (
-        <div className={classNames("order_page",confirm)}>
+        <div className={classNames("order_page", confirm)}>
             {(orderConfirmation) && (
                 <div className="order_page_confirmation">
                     <OrderConfirmation setOrderConfirmation={setOrderConfirmation}/>
@@ -38,12 +37,11 @@ function CreateOrder() {
                 <div className="order_page_tab">
                     {(currentTab === 0) && (
                         <div className="order_page_tab_location">
-                            <LocationForm/>
-                            <LocationMap/>
+                            <LocationTab/>
                         </div>
                     )}
                     {(currentTab === 1) && (
-                       <CarsTab/>
+                        <CarsTab/>
                     )}
                     {(currentTab === 2) && (
                         <div className="order_page_tab_additional">

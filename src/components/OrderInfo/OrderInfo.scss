@@ -46,8 +46,17 @@
 
 @media (max-width: $desktopMinSize) {
   .order_info_container {
+    width: 287px;
+    margin-right: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: $tabletSize) {
+  .order_info_container {
     min-width: 220px;
-    margin-right: 0;
+    width: 220px;
+    margin-right: 32px;
     padding-right: 32px;
   }
 }
