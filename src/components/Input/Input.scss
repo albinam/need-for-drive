@@ -4,16 +4,19 @@
 .form {
 
   &_input {
-    width: 224px;
+    width: 220px;
     outline: none;
     border: none;
     border-bottom: 1px solid $color-gray-dark;
-    margin-bottom: 16px;
+    height: 25px;
+    font-family: $fontLight;
   }
+
 
   &_label {
     text-align: right;
     width: 91px;
+    margin-top: auto;
   }
 
   &_line {
@@ -25,17 +28,24 @@
     color: $color-main;
   }
 
-  &_button{
-    margin-left: -8px;
-    color:$color-main;
+  &_button {
+    color: $color-main;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    border-bottom: 1px solid $color-gray-dark;
   }
 
   &_name {
     margin-left: 16px;
   }
+}
+.ant-select-item-option-active:not(.ant-select-item-option-disabled){
+  background-color: $color-main-white !important;
+  color: $color-accent !important;
+}
+.ant-select-item{
+  color:$color-gray-dark !important;
 }
 @media (max-width: $tabletSize) {
 
@@ -53,14 +63,17 @@
       margin-right: 8px;
       justify-content: center;
     }
+
     &_input {
       width: 90%;
     }
-    &_label{
+
+    &_label {
       text-align: left;
       width: 100%;
       margin-bottom: 8px;
     }
+
     &_name {
       margin-left: 0;
       display: flex;

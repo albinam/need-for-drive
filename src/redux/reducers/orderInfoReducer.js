@@ -1,7 +1,6 @@
 const initialState = {
-
-    city:"",
-    point: "",
+    city:null,
+    point: null,
     car: {
         id:null,
         name:null
@@ -12,7 +11,7 @@ const initialState = {
     tariff: null,
     additions: []
 }
-export default function orderStepsReducer(state = initialState, action) {
+export default function orderInfoReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_POINT':
             return {

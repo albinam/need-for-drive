@@ -22,9 +22,9 @@ function OrderInfo({setOrderConfirmation}) {
     const cityPointInfo = () => {
         let info = null;
         if (order.city) {
-            info = order.city;
+            info = order.city.name;
             if (order.point) {
-                info = order.city + ", " + order.point;
+                info = order.city.name + ", " + order.point.address;
             }
         }
         return info;
