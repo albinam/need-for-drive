@@ -1,10 +1,7 @@
 const initialState = {
     city:null,
     point: null,
-    car: {
-        id:null,
-        name:null
-    },
+    car: null,
     color: null,
     dateFrom: "",
     dateTo: "",

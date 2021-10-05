@@ -5,7 +5,7 @@ export const disabled = (step, order) => {
         return !(order.city && order.point);
     }
     if (step === 2) {
-        return !(order.car.id != null);
+        return !(order.car != null);
     }
     if (step === 3) {
         return !(order.color != null && order.dateFrom != null && order.dateTo != null && order.tariff!=null);

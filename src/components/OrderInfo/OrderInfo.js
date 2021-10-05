@@ -29,6 +29,16 @@ function OrderInfo({setOrderConfirmation}) {
         }
         return info;
     }
+    const priceInfo = () => {
+        let info = null;
+        if (order.price) {
+            info = order.price;
+        }
+        else if (order.car){
+            info = "от " + order.car.priceMin.toLocaleString() + " до " + order.car.priceMax.toLocaleString();
+        }
+        return info;
+    }
 
     return (
         <div className="order_info_container">
@@ -36,7 +46,7 @@ function OrderInfo({setOrderConfirmation}) {
                 <div className="order_info_title">Ваш заказ:</div>
                 <ul className="order_info_items">
                     <OrderInfoItem value={cityPointInfo()} element="Пункт выдачи"/>
-                    <OrderInfoItem value={order.car.name} element="Модель"/>
+                    <OrderInfoItem value={(order.car) ? order.car.name : null} element="Модель"/>
                     <OrderInfoItem value={order.color} element="Цвет"/>
                     <OrderInfoItem value={getDuration(order)} element="Длительность аренды"/>
                     <OrderInfoItem value={(order.tariff) ? (order.tariff.split(",")[0]) : null} element="Тариф"/>
@@ -47,7 +57,7 @@ function OrderInfo({setOrderConfirmation}) {
                                 )
                             }))}
                 </ul>
-                <div className="order_info_price">Цена: {order.price} &#8381;</div>
+                <div className="order_info_price">Цена: {priceInfo()} &#8381;</div>
                 {(stepsButtons[step].id < 3) ?
                     <button onClick={() => setStepChange(stepsButtons[step].id + 1)}
                             className={classNames("content_button", disabledButton)}

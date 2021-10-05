@@ -19,13 +19,10 @@ export function setCity(city) {
     }
 }
 
-export function setCar(id, name) {
+export function setCar(car) {
     return {
         type: 'SET_CAR',
-        payload: {
-            id: id,
-            name: name
-        }
+        payload: car
     }
 }
 
@@ -99,6 +96,20 @@ export function setApiInfoCitiesCoords(coords) {
     return {
         type: 'SET_CITIESCOORDS',
         payload: coords
+    }
+}
+
+export function setApiInfoCars(cars) {
+    return {
+        type: 'SET_CARS',
+        payload: cars
+    }
+}
+
+export function setApiInfoCategories(categories) {
+    return {
+        type: 'SET_CATEGORIES',
+        payload: categories
     }
 }
 
