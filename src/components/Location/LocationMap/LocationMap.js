@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './LocationMap.scss';
 import GoogleMapReact from 'google-map-react';
 import {useDispatch, useSelector} from "react-redux";
-import {dispatchCitiesCoords, displayPoints} from "../../../assets/utils/locationServices";
 import {setCity, setPoint} from "../../../redux/actions/actions";
 import Marker from "./Marker";
 
@@ -31,16 +30,6 @@ function LocationMap() {
         dispatch(setCity(location.cities[0].find(city => city.id === value.point.cityId.id)));
         dispatch(setPoint(location.points[0].find(point => point.id === value.point.id)));
     }
-
-    useEffect(() => {
-        if (location.points.length !== 0) {
-            dispatch(displayPoints(location.points))
-        }
-        if (location.cities.length !== 0) {
-            dispatch(dispatchCitiesCoords(location.cities))
-        }
-    }, [1])
-
 
     return (
         <div className="location-map">

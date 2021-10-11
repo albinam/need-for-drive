@@ -1,33 +1,56 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './CarsTab.scss';
 import CategorySelector from "../CategorySelector/CategorySelector";
 import CarCards from "../CarCards/CarCards";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {getCars, getCarsByCategory, getCategories} from "../../assets/utils/carsApi";
 
 function CarsTab() {
     const categories = useSelector(state => state.apiInfo.categories);
-    const categoriesToShow=[{id: 'all', name: 'Все модели', description:'Все модели'},...categories[0]];
-    const [selected, setSelected] = useState(categoriesToShow[0]);
+    const [selected, setSelected] = useState(null);
+    const dispatch = useDispatch();
     const cars = useSelector(state => state.apiInfo.cars);
-    const [carsList, setCarsList] = useState(cars[0]);
+    const [carsList, setCarsList] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const all = [{id: 'all', name: 'Все модели', description: 'Все модели'}];
+
+    useEffect(() => {
+        setLoading(true)
+        if (!categories[0]) {
+            dispatch(getCategories());
+        }
+        if (!cars[0]) {
+            dispatch(getCars());
+        }
+        if (cars[0]) {
+            setLoading(false);
+        }
+
+    }, [cars])
 
     const handleCLick = (value) => {
-        setSelected(value)
-        if(value.id==="all"){
+        setSelected(value);
+        if (value.id !== "all") {
+            setLoading(true)
+            let cars = getCarsByCategory(value.id);
+            cars.then(res => setCarsList(res.data))
+            setLoading(false)
+        } else {
             setCarsList(cars[0])
-        }
-        else {
-            setCarsList(cars[0].filter((car) => (car.categoryId) && car.categoryId.id === value.id))
         }
     }
 
     return (
         <div>
-            {(cars.length !== 0 && categories.length !== 0) &&
+            {!(loading) &&
             <div className="order_page_tab_cars">
-                <CategorySelector type="carCategory" selected={selected} handleClick={handleCLick}
-                                  categories={categoriesToShow}/>
-                <CarCards cars={(carsList)?carsList:cars[0]}/>
+                <div className="order_page_tab_cars_category">
+                    <CategorySelector type="carCategory" selected={selected} handleClick={handleCLick}
+                                      categories={all}/>
+                    <CategorySelector type="carCategory" selected={selected} handleClick={handleCLick}
+                                      categories={categories[0]}/>
+                </div>
+                <CarCards cars={carsList ? carsList : cars[0]}/>
             </div>
             }
         </div>

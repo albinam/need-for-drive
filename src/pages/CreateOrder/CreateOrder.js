@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Menu from "../../components/Menu/Menu";
 import Header from "../../components/Header/Header";
 import "./CreateOrder.scss"
@@ -9,30 +9,19 @@ import Total from "../../components/Total/Total";
 import AdditionalTab from "../../components/AdditionalTab/AdditionalTab";
 import OrderConfirmation from "../../components/OrderConfirmation/OrderConfirmation";
 import classNames from "classnames";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import CarsTab from "../../components/CarsTab/CarsTab";
 import LocationTab from "../../components/Location/LocationTab";
-import {getCars, getCategories} from "../../assets/utils/carsApi";
 
 function CreateOrder() {
 
     const currentTab = useSelector(state => state.step);
     const [orderConfirmation, setConfirmation] = useState(false);
     const confirm = (orderConfirmation) ? "opened" : null;
-    const cars = useSelector(state => state.apiInfo.cars);
-    const dispatch = useDispatch();
 
     const setOrderConfirmation = confirmation => {
         setConfirmation(confirmation);
     };
-
-    useEffect(() => {
-        dispatch(getCars());
-        dispatch(getCategories());
-        if (cars.length !== 0) {
-            console.log(cars)
-        }
-    }, [])
 
     return (
         <div className={classNames("order_page", confirm)}>

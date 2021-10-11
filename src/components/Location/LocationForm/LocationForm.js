@@ -15,7 +15,7 @@ function LocationForm() {
     const onChangeCity = value => {
         dispatch(setCity(JSON.parse(value)));
         if (value != null) {
-            setPointsList(points[0].filter((point) => point.cityId.id === JSON.parse(value).id));
+            setPointsList(points[0].filter((point) => point.cityId?.id === JSON.parse(value).id));
         }
         onChangePoint(null);
     };

@@ -17,6 +17,12 @@ export const getCars = () => {
             })
     }
 }
+
+export async function  getCarsByCategory (category){
+    const res = await myAxios.get(`/db/car?categoryId=${category}`)
+    return res.data;
+}
+
 export const getCategories = () => {
     return (dispatch) => {
         myAxios.get('/db/category')
