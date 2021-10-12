@@ -9,6 +9,7 @@
   font-size: 14px;
   line-height: 16px;
   color: $color-gray-dark;
+  flex-wrap: wrap;
 
   &.carColor {
     margin-top: 16px;
@@ -22,16 +23,13 @@
     flex-direction: row;
     display: flex;
     margin-left: 20px;
+    margin-right: 20px;
 
     &.price {
       &:not(:first-child) {
         margin-top: 8px;
         margin-left: 20px;
       }
-    }
-
-    &:not(:first-child) {
-      margin-left: 36px;
     }
 
     input {
@@ -71,6 +69,7 @@
   .category_selector {
     justify-content: center;
     font-size: 12px;
+    flex-wrap: wrap;
 
     &.carColor {
       justify-content: left;
@@ -82,6 +81,8 @@
     }
 
     &_item {
+      margin-left: 16px;
+      margin-right: 16px;
       &.carColor {
         &:not(:first-child) {
           margin-top: 8px;
