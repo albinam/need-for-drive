@@ -13,9 +13,11 @@ export async function getPointsCoords(point) {
 export const displayPoints = (points) => {
     return (dispatch) => {
         for (const point of points[0]) {
-            getPointsCoords(point).then((response) => {
-                dispatch(setMarker(response));
-            })
+            if (point.cityId) {
+                getPointsCoords(point).then((response) => {
+                    dispatch(setMarker(response));
+                })
+            }
         }
     }
 }
@@ -26,7 +28,7 @@ export async function getCityCoords({city, cityId}) {
     let geo = await Geocode.fromAddress(city)
     let lat = geo.results[0].geometry.location.lat;
     let lng = geo.results[0].geometry.location.lng;
-    return {city,cityId, lat, lng};
+    return {city, cityId, lat, lng};
 }
 
 export const dispatchCitiesCoords = (cities) => {
@@ -34,7 +36,7 @@ export const dispatchCitiesCoords = (cities) => {
         for (const city of cities[0]) {
             getCityCoords({
                 city: city.name,
-                cityId:  city.id,
+                cityId: city.id,
             }).then((response) => {
                 dispatch(setApiInfoCitiesCoords(response));
             })
