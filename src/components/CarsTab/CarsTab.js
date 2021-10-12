@@ -4,15 +4,16 @@ import CategorySelector from "../CategorySelector/CategorySelector";
 import CarCards from "../CarCards/CarCards";
 import {useDispatch, useSelector} from "react-redux";
 import {getCars, getCarsByCategory, getCategories} from "../../assets/utils/carsApi";
+import Loader from "../Loader/Loader";
 
 function CarsTab() {
     const categories = useSelector(state => state.apiInfo.categories);
-    const [selected, setSelected] = useState(null);
+    const all = [{id: 'all', name: 'Все модели', description: 'Все модели'}];
+    const [selected, setSelected] = useState(all[0]);
     const dispatch = useDispatch();
     const cars = useSelector(state => state.apiInfo.cars);
     const [carsList, setCarsList] = useState(null);
     const [loading, setLoading] = useState(true);
-    const all = [{id: 'all', name: 'Все модели', description: 'Все модели'}];
 
     useEffect(() => {
         setLoading(true)
@@ -42,7 +43,7 @@ function CarsTab() {
 
     return (
         <div>
-            {!(loading) &&
+            {(loading)? <Loader/>:
             <div className="order_page_tab_cars">
                 <div className="order_page_tab_cars_category">
                     <CategorySelector type="carCategory" selected={selected} handleClick={handleCLick}
