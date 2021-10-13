@@ -5,7 +5,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./AdditionalTab.scss";
 import {useDispatch, useSelector} from "react-redux";
-import {deleteAdditions, setAdditions, setColor, setTariff} from "../../redux/actions/actions";
+import {deleteAdditions, setAdditions, setColor, setPrice, setTariff} from "../../redux/actions/actions";
+import {getPrice} from "../../assets/utils/utils";
 
 function AdditionalTab({categories}) {
 
@@ -18,13 +19,19 @@ function AdditionalTab({categories}) {
 
     const handleClickTariff = (tariff) => {
         dispatch(setTariff(tariff));
+        let price = getPrice(order,tariff,order.additions);
+        dispatch(setPrice(price))
     };
 
     const handleClickAdditions = (additions) => {
         if (order.additions.includes(additions)) {
             dispatch(deleteAdditions(additions));
+            let price = getPrice(order,order.tariff,order.additions,additions);
+            dispatch(setPrice(price))
         } else {
             dispatch(setAdditions(additions));
+            let price = getPrice(order,order.tariff,[additions,...order.additions]);
+            dispatch(setPrice(price))
         }
     };
 
@@ -32,7 +39,7 @@ function AdditionalTab({categories}) {
         <div>
             <div className="order_page_tab_additional_label">Цвет</div>
             <CategorySelector selected={order.color} handleClick={handleClickColor} type="carColor"
-                              categories={categories.carColor}/>
+                              categories={order.car.colors}/>
             <RentDatesForm/>
             <div className="order_page_tab_additional_label">Тариф</div>
             <CategorySelector selected={order.tariff} handleClick={handleClickTariff} type="price"

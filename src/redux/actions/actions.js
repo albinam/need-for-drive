@@ -26,6 +26,20 @@ export function setCar(car) {
     }
 }
 
+export function setPrice(price) {
+    return {
+        type: 'SET_PRICE',
+        payload: price
+    }
+}
+
+export function setDuration(duration) {
+    return {
+        type: 'SET_DURATION',
+        payload: duration
+    }
+}
+
 export function setColor(color) {
     return {
         type: 'SET_COLOR',

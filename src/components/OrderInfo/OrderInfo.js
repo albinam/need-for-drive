@@ -29,12 +29,31 @@ function OrderInfo({setOrderConfirmation}) {
         }
         return info;
     }
+
+    const durationInfo = () => {
+        let duration;
+        if (order.dateFrom !== "" && order.dateTo !== "")
+            duration = getDuration(order)
+        let dur = "";
+        if (duration) {
+            if (duration[0]) {
+                dur += duration[0] + " д ";
+            }
+            if (duration[1]) {
+                dur += duration[1] + " ч ";
+            }
+            if (duration[2]) {
+                dur += duration[2] + " мин ";
+            }
+        }
+        return dur;
+    }
+
     const priceInfo = () => {
         let info = null;
         if (order.price) {
             info = order.price;
-        }
-        else if (order.car){
+        } else if (order.car) {
             info = "от " + order.car.priceMin.toLocaleString() + " до " + order.car.priceMax.toLocaleString();
         }
         return info;
@@ -48,14 +67,14 @@ function OrderInfo({setOrderConfirmation}) {
                     <OrderInfoItem value={cityPointInfo()} element="Пункт выдачи"/>
                     <OrderInfoItem value={(order.car) ? order.car.name : null} element="Модель"/>
                     <OrderInfoItem value={order.color} element="Цвет"/>
-                    <OrderInfoItem value={getDuration(order)} element="Длительность аренды"/>
+                    <OrderInfoItem value={durationInfo()} element="Длительность аренды"/>
                     <OrderInfoItem value={(order.tariff) ? (order.tariff.split(",")[0]) : null} element="Тариф"/>
                     {order.additions.map(
-                            (service => {
-                                return (
-                                    <OrderInfoItem key={service} value="Да" element={service.split(",")[0]}/>
-                                )
-                            }))}
+                        (service => {
+                            return (
+                                <OrderInfoItem key={service} value="Да" element={service.split(",")[0]}/>
+                            )
+                        }))}
                 </ul>
                 <div className="order_info_price">Цена: {priceInfo()} &#8381;</div>
                 {(stepsButtons[step].id < 3) ?
