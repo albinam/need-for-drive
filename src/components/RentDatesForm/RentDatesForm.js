@@ -1,10 +1,10 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {setDateFrom, setDateTo, setPrice} from "../../redux/actions/actions";
+import {setDateFrom, setDateTo, setDuration, setPrice} from "../../redux/actions/actions";
 import DateInput from "./DatePicker/DateInput";
 import "./RentDatesForm.scss"
 import moment from "moment";
-import {getPrice} from "../../assets/utils/utils";
+import {getDuration, getPrice} from "../../assets/utils/utils";
 
 function RentDatesForm() {
     const dispatch = useDispatch();
@@ -17,8 +17,10 @@ function RentDatesForm() {
 
     async function setDateEnd(value) {
         dispatch(setDateTo(value));
-        let price = getPrice(order,order.tariff,order.additions);
-        dispatch(setPrice(price))
+        if (order.dateFrom !== "" && value !== "" && value && order.dateFrom) {
+            dispatch(setDuration(getDuration(order.dateFrom,value)))
+        }
+        dispatch(setPrice(getPrice(order.duration,order.tariff,order.additions)))
     }
 
     const disabledDate = current => {

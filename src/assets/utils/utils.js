@@ -11,10 +11,7 @@ export const disabled = (step, order) => {
         return !(order.color != null && order.dateFrom != null && order.dateTo != null && order.tariff != null);
     }
 }
-export const getPrice = (order, tariff, additions,deleteAdd) => {
-    let duration;
-    if (order.dateFrom !== "" && order.dateTo !== "")
-        duration = getDuration(order)
+export const getPrice = (duration, tariff, additions, deleteAdd) => {
     if (duration && tariff) {
         let price = parseInt((tariff.split(", ")[1]).split("₽")[0]);
         let totalPrice;
@@ -32,7 +29,7 @@ export const getPrice = (order, tariff, additions,deleteAdd) => {
                 totalPrice += parseInt((add.split(", ")[1]).split("р")[0])
             })
         }
-        if(deleteAdd){
+        if (deleteAdd) {
             totalPrice -= parseInt((deleteAdd.split(", ")[1]).split("р")[0])
         }
         return totalPrice;
@@ -40,10 +37,10 @@ export const getPrice = (order, tariff, additions,deleteAdd) => {
 }
 
 
-export const getDuration = (order) => {
+export const getDuration = (dateFrom, dateTo) => {
     let result = [null, null, null];
-    if (order.dateFrom && order.dateTo) {
-        let duration = moment.duration(order.dateTo.diff(order.dateFrom));
+    if (dateFrom && dateTo) {
+        let duration = moment.duration(dateTo.diff(dateFrom));
         let hours = duration.asHours();
         if (hours > 24) {
             if (duration.asHours() % 24 !== 0) {

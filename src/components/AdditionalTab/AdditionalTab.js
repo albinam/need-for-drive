@@ -19,19 +19,16 @@ function AdditionalTab({categories}) {
 
     const handleClickTariff = (tariff) => {
         dispatch(setTariff(tariff));
-        let price = getPrice(order,tariff,order.additions);
-        dispatch(setPrice(price))
+        dispatch(setPrice(getPrice(order.duration,tariff,order.additions)))
     };
 
     const handleClickAdditions = (additions) => {
         if (order.additions.includes(additions)) {
             dispatch(deleteAdditions(additions));
-            let price = getPrice(order,order.tariff,order.additions,additions);
-            dispatch(setPrice(price))
+            dispatch(setPrice(getPrice(order.duration,order.tariff,order.additions,additions)));
         } else {
             dispatch(setAdditions(additions));
-            let price = getPrice(order,order.tariff,[additions,...order.additions]);
-            dispatch(setPrice(price))
+            dispatch(setPrice(getPrice(order.duration,order.tariff,[additions,...order.additions])));
         }
     };
 

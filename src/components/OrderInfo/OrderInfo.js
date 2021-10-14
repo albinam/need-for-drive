@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import stepsButtons from "../../assets/data/stepsButtons";
 import {useDispatch, useSelector} from "react-redux";
 import {setStep} from "../../redux/actions/actions";
-import {disabled, getDuration} from "../../assets/utils/utils";
+import {disabled} from "../../assets/utils/utils";
 import classNames from "classnames";
 
 function OrderInfo({setOrderConfirmation}) {
@@ -31,19 +31,19 @@ function OrderInfo({setOrderConfirmation}) {
     }
 
     const durationInfo = () => {
-        let duration;
-        if (order.dateFrom !== "" && order.dateTo !== "")
-            duration = getDuration(order)
+        //let duration;
+        //if (order.dateFrom !== "" && order.dateTo !== "")
+         //   duration = getDuration(order)
         let dur = "";
-        if (duration) {
-            if (duration[0]) {
-                dur += duration[0] + " д ";
+        if (order.duration) {
+            if (order.duration[0]) {
+                dur += order.duration[0] + " д ";
             }
-            if (duration[1]) {
-                dur += duration[1] + " ч ";
+            if (order.duration[1]) {
+                dur += order.duration[1] + " ч ";
             }
-            if (duration[2]) {
-                dur += duration[2] + " мин ";
+            if (order.duration[2]) {
+                dur += order.duration[2] + " мин ";
             }
         }
         return dur;
