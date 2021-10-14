@@ -25,7 +25,8 @@ export const getRate = () => {
                 const tariff = resp.data.data.map((data) => ({
                     id: data.id,
                     name: data.rateTypeId.name + ", " + data.price + "₽/" + data.rateTypeId.unit,
-                    price: data.price
+                    price: data.price,
+                    unit:data.rateTypeId.unit
                 }));
                 console.log(tariff)
                 dispatch(setApiInfoRates(tariff));

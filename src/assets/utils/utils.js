@@ -13,16 +13,22 @@ export const disabled = (step, order) => {
 }
 export const getPrice = (duration, tariff, additions, deleteAdd) => {
     if (duration && tariff) {
-        let price = parseInt((tariff.split(", ")[1]).split("₽")[0]);
         let totalPrice;
-        if (price === 1999) {
+        if (tariff.unit === "мин") {
+            totalPrice = tariff.price * (duration[0] * 1440 + duration[1] * 60 + duration[2])
+        }
+        if (tariff.unit === "сутки") {
             if (duration[1] || duration[2]) {
-                totalPrice = price * (duration[0] + 1);
+                totalPrice = tariff.price * (duration[0] + 1);
             } else {
-                totalPrice = price * duration[0];
+                totalPrice = tariff.price * duration[0];
             }
-        } else {
-            totalPrice = price * (duration[0] * 1440 + duration[1] * 60 + duration[2]);
+        }
+        if (tariff.unit === "7 дней") {
+            totalPrice = tariff.price * Math.ceil((duration[0])/7);
+        }
+        if (tariff.unit === "30 дней") {
+            totalPrice = tariff.price * Math.ceil((duration[0])/30);
         }
         if (additions) {
             additions.map(add => {

@@ -68,7 +68,7 @@ function OrderInfo({setOrderConfirmation}) {
                     <OrderInfoItem value={(order.car) ? order.car.name : null} element="Модель"/>
                     <OrderInfoItem value={order.color} element="Цвет"/>
                     <OrderInfoItem value={durationInfo()} element="Длительность аренды"/>
-                    <OrderInfoItem value={(order.tariff) ? (order.tariff.split(",")[0]) : null} element="Тариф"/>
+                    <OrderInfoItem value={(order.tariff) ? (order.tariff.name.split(",")[0]) : null} element="Тариф"/>
                     {order.additions.map(
                         (service => {
                             return (
