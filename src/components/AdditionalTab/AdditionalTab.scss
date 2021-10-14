@@ -8,3 +8,11 @@
   line-height: 16px;
   color: $color-main;
 }
+.order_page_tab_additional_container{
+  height: calc(100vh - 64px - 66px);
+  margin-left: auto;
+  margin-right: 2px;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+}

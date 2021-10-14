@@ -3,7 +3,7 @@ import './CarsTab.scss';
 import CategorySelector from "../CategorySelector/CategorySelector";
 import CarCards from "../CarCards/CarCards";
 import {useDispatch, useSelector} from "react-redux";
-import {getCars, getCarsByCategory, getCategories} from "../../assets/utils/carsApi";
+import {getCars, getCarsByCategory, getCategories, getRate} from "../../assets/utils/carsApi";
 import Loader from "../Loader/Loader";
 
 function CarsTab() {
@@ -17,17 +17,17 @@ function CarsTab() {
 
     useEffect(() => {
         setLoading(true)
-        if (!categories[0]) {
+        if (!cars) {
+            dispatch(getCars());
+            getRate();
+        }
+        if (cars && !categories) {
             dispatch(getCategories());
         }
-        if (!cars[0]) {
-            dispatch(getCars());
-        }
-        if (cars[0]) {
+        if (categories) {
             setLoading(false);
         }
-
-    }, [cars])
+    }, [cars,categories])
 
     const handleCLick = (value) => {
         setSelected(value);
@@ -49,9 +49,9 @@ function CarsTab() {
                     <CategorySelector type="carCategory" selected={selected} handleClick={handleCLick}
                                       categories={all}/>
                     <CategorySelector type="carCategory" selected={selected} handleClick={handleCLick}
-                                      categories={categories[0]}/>
+                                      categories={categories}/>
                 </div>
-                <CarCards cars={carsList ? carsList : cars[0]}/>
+                <CarCards cars={carsList ? carsList : cars}/>
             </div>
             }
         </div>

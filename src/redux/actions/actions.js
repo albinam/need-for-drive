@@ -101,6 +101,13 @@ export function setApiInfoPoints(point) {
     }
 }
 
+export function setApiInfoRates(rate) {
+    return {
+        type: 'SET_RATES',
+        payload: rate
+    }
+}
+
 export function setApiInfoCities(city) {
     return {
         type: 'SET_CITIES',
