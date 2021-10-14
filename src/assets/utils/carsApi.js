@@ -28,7 +28,6 @@ export const getRate = () => {
                     price: data.price,
                     unit:data.rateTypeId.unit
                 }));
-                console.log(tariff)
                 dispatch(setApiInfoRates(tariff));
             })
     }
