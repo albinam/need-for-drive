@@ -5,8 +5,10 @@ const initialState = {
     color: null,
     dateFrom: "",
     dateTo: "",
+    duration:null,
     tariff: null,
-    additions: []
+    additions: [],
+    price:null
 }
 export default function orderInfoReducer(state = initialState, action) {
     switch (action.type) {
@@ -20,6 +22,11 @@ export default function orderInfoReducer(state = initialState, action) {
                 ...state,
                 city: action.payload
             };
+        case 'SET_PRICE':
+            return {
+                ...state,
+                price: action.payload
+            };
         case 'SET_CAR':
             return {
                 ...state,
@@ -29,6 +36,11 @@ export default function orderInfoReducer(state = initialState, action) {
             return {
                 ...state,
                 color: action.payload
+            };
+        case 'SET_DURATION':
+            return {
+                ...state,
+                duration: action.payload
             };
         case 'SET_TARIFF':
             return {

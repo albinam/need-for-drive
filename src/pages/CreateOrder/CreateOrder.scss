@@ -43,6 +43,11 @@
       display: flex;
       flex: 1;
     }
+    &_additional{
+      height: calc(100vh - 64px - 66px);
+      flex: 1;
+      overflow: auto;
+    }
 
     &_total {
       margin-top: 32px;
