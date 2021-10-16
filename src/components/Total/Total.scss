@@ -52,8 +52,9 @@
     width: fit-content;
   }
 
-  &_image {
-    min-width: 256px;
+  img {
+    max-width: 256px;
+    max-height: 116px;
   }
 }
 
@@ -61,9 +62,11 @@
   .total {
     &_image {
       min-width: 200px;
-      img{
+
+      img {
         width: 200px;
         object-fit: cover;
+
       }
     }
   }

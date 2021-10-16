@@ -30,7 +30,7 @@ CategorySelector.propTypes = {
     categories: PropTypes.array,
     type:PropTypes.string,
     handleClick: PropTypes.func,
-    selected:PropTypes.object
+    selected:PropTypes.oneOfType([PropTypes.object,PropTypes.string])
 }
 
 export default CategorySelector;

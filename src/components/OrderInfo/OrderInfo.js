@@ -8,10 +8,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {setStep} from "../../redux/actions/actions";
 import {disabled} from "../../assets/utils/utils";
 import classNames from "classnames";
+import {cancelOrder} from "../../assets/utils/orderServices";
 
 function OrderInfo({setOrderConfirmation}) {
     const step = useSelector(state => state.step);
     const order = useSelector(state => state.order);
+    const status = useSelector(state => state.apiInfo.status);
     const dispatch = useDispatch();
     const disabledButton = (disabled(step + 1, order)) ? 'disabled' : null;
 
@@ -74,19 +76,24 @@ function OrderInfo({setOrderConfirmation}) {
                         }))}
                 </ul>
                 <div className="order_info_price">Цена: {priceInfo()} &#8381;</div>
-                {(stepsButtons[step].id < 3) ?
-                    <button onClick={() => setStepChange(stepsButtons[step].id + 1)}
-                            className={classNames("content_button", disabledButton)}
-                            disabled={disabled(step + 1, order)}>{stepsButtons[step].buttonName}</button>
+                {(order.orderStatusId && order.orderStatusId.name !== "Отмененые") ?
+                    <button className="content_button pink" onClick={() => cancelOrder(order,status[2])}>Отменить</button>
                     :
-                    <button onClick={() => setOrderConfirmation(true)} className="content_button">Заказать</button>}
+                    (stepsButtons[step].id < 3 && !order.orderStatusId) ?
+                        <button onClick={() => setStepChange(stepsButtons[step].id + 1)}
+                                className={classNames("content_button", disabledButton)}
+                                disabled={disabled(step + 1, order)}>{stepsButtons[step].buttonName}</button>
+                        :
+                        (!order.orderStatusId) ? <button onClick={() => setOrderConfirmation(true)}
+                                                         className="content_button">Заказать</button> : null
+                }
             </div>
         </div>
     )
 }
 
 OrderInfo.propTypes = {
-    setOrderConfirmation: PropTypes.func
+    setOrderConfirmation: PropTypes.func,
 }
 
 export default OrderInfo;
