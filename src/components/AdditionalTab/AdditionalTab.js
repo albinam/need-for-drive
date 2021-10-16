@@ -9,6 +9,7 @@ import {deleteAdditions, setAdditions, setColor, setPrice, setTariff} from "../.
 import {getPrice} from "../../assets/utils/utils";
 import {getRate} from "../../assets/utils/carsApi";
 import Loader from "../Loader/Loader";
+import {getStatus} from "../../assets/utils/orderServices";
 
 function AdditionalTab({categories}) {
 
@@ -24,6 +25,7 @@ function AdditionalTab({categories}) {
     useEffect(() => {
         setLoading(true)
         dispatch(getRate());
+        dispatch(getStatus());
         if (rates) {
             setLoading(false)
         }

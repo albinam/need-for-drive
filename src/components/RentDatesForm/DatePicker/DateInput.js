@@ -30,7 +30,7 @@ function DateInput({value, handleClick, disableDate,disabled}) {
 DateInput.propTypes = {
     value:PropTypes.object,
     handleClick: PropTypes.func,
-    disableDate: PropTypes.bool,
+    disableDate: PropTypes.func,
     disabled:PropTypes.bool
 }
 export default DateInput;

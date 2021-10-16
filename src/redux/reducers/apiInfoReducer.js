@@ -5,7 +5,8 @@ const initialState = {
     citiesCoords:[],
     cars:null,
     categories:null,
-    rates:[]
+    rates:[],
+    status:[]
 }
 export default function apiInfoReducer(state = initialState, action) {
     switch (action.type) {
@@ -41,7 +42,13 @@ export default function apiInfoReducer(state = initialState, action) {
             };
         case 'SET_RATES':
             return {
+                ...state,
                 rates: action.payload
+            };
+        case 'SET_STATUS':
+            return {
+                ...state,
+                status: action.payload
             };
         default:
             return state;

@@ -18,7 +18,9 @@ function OrderSteps() {
 
     return (
         <nav className="steps">
-            {steps.map((link) => (
+            {(order.orderStatusId)?
+                <div className="order_text">Заказ номер {order.id}</div>:
+                steps.map((link) => (
                 <button className={classNames("steps_link", (link.id === step) ? "active" : (link.id < step) ? "filled" : null)}
                     key={link.id} onClick={()=>setStepChange(link.id)} disabled={disabled(link.id,order)} >{link.name}</button>
             ))}

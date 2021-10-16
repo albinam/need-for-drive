@@ -3,12 +3,14 @@ const initialState = {
     point: null,
     car: null,
     color: null,
-    dateFrom: "",
-    dateTo: "",
+    dateFrom: null,
+    dateTo: null,
     duration:null,
     tariff: null,
     additions: [],
-    price:null
+    price:null,
+    id:null,
+    orderStatusId: null
 }
 export default function orderInfoReducer(state = initialState, action) {
     switch (action.type) {
@@ -67,6 +69,8 @@ export default function orderInfoReducer(state = initialState, action) {
                 ...state,
                 additions:state.additions.filter(item => item !== action.payload)
             };
+        case "SET_ORDER":
+            return action.payload;
         default:
             return state;
     }
