@@ -31,9 +31,6 @@ function OrderInfo({setOrderConfirmation}) {
     }
 
     const durationInfo = () => {
-        //let duration;
-        //if (order.dateFrom !== "" && order.dateTo !== "")
-         //   duration = getDuration(order)
         let dur = "";
         if (order.duration) {
             if (order.duration[0]) {
