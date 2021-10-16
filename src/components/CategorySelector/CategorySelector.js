@@ -11,20 +11,20 @@ function CategorySelector({categories, type, handleClick, selected}) {
                 ((category,index) => {
                     return (
                         <div key={index}
-                             className={classNames("category_selector_item", (type) ? type : null, (category.id === selected?.id) ? "active" : null)}>
-                            <input key={category.id} type="radio" className={classNames("category_selector_item_radio",(category.id === selected?.id) ? "active" : null)} onChange={() => handleClick(category)}/>
+                             className={classNames("category_selector_item", (type) ? type : null, (type==="carColor" )?((category ===  selected) ? "active" : null):((category.id  === selected?.id) ? "active" : null))}>
+                            <input key={category.id} type="radio" className={classNames("category_selector_item_radio",(type==="carColor")?((category ===  selected) ? "active" : null):((category.id  === selected?.id) ? "active" : null))} onChange={() => handleClick(category)}/>
                             <label
-                                key={category.description}
+                                key={category.name?category.name:category}
                                 className="category_selector_item_label"
                                 onClick={() => handleClick(category)}
                             >
-                                {category.name}
+                                {category.name?category.name:category}
                             </label>
                         </div>
                     )
                 }))}
         </div>
-    )
+    );
 }
 CategorySelector.propTypes = {
     categories: PropTypes.array,

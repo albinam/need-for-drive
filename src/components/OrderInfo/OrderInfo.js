@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import stepsButtons from "../../assets/data/stepsButtons";
 import {useDispatch, useSelector} from "react-redux";
 import {setStep} from "../../redux/actions/actions";
-import {disabled, getDuration} from "../../assets/utils/utils";
+import {disabled} from "../../assets/utils/utils";
 import classNames from "classnames";
 
 function OrderInfo({setOrderConfirmation}) {
@@ -29,12 +29,28 @@ function OrderInfo({setOrderConfirmation}) {
         }
         return info;
     }
+
+    const durationInfo = () => {
+        let dur = "";
+        if (order.duration) {
+            if (order.duration[0]) {
+                dur += order.duration[0] + " д ";
+            }
+            if (order.duration[1]) {
+                dur += order.duration[1] + " ч ";
+            }
+            if (order.duration[2]) {
+                dur += order.duration[2] + " мин ";
+            }
+        }
+        return dur;
+    }
+
     const priceInfo = () => {
         let info = null;
         if (order.price) {
             info = order.price;
-        }
-        else if (order.car){
+        } else if (order.car) {
             info = "от " + order.car.priceMin.toLocaleString() + " до " + order.car.priceMax.toLocaleString();
         }
         return info;
@@ -48,14 +64,14 @@ function OrderInfo({setOrderConfirmation}) {
                     <OrderInfoItem value={cityPointInfo()} element="Пункт выдачи"/>
                     <OrderInfoItem value={(order.car) ? order.car.name : null} element="Модель"/>
                     <OrderInfoItem value={order.color} element="Цвет"/>
-                    <OrderInfoItem value={getDuration(order)} element="Длительность аренды"/>
-                    <OrderInfoItem value={(order.tariff) ? (order.tariff.split(",")[0]) : null} element="Тариф"/>
+                    <OrderInfoItem value={durationInfo()} element="Длительность аренды"/>
+                    <OrderInfoItem value={(order.tariff) ? (order.tariff.name.split(",")[0]) : null} element="Тариф"/>
                     {order.additions.map(
-                            (service => {
-                                return (
-                                    <OrderInfoItem key={service} value="Да" element={service.split(",")[0]}/>
-                                )
-                            }))}
+                        (service => {
+                            return (
+                                <OrderInfoItem key={service} value="Да" element={service.split(",")[0]}/>
+                            )
+                        }))}
                 </ul>
                 <div className="order_info_price">Цена: {priceInfo()} &#8381;</div>
                 {(stepsButtons[step].id < 3) ?

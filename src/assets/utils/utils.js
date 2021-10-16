@@ -8,33 +8,68 @@ export const disabled = (step, order) => {
         return !(order.car != null);
     }
     if (step === 3) {
-        return !(order.color != null && order.dateFrom != null && order.dateTo != null && order.tariff!=null);
+        return !(order.color != null && order.dateFrom != null && order.dateTo != null && order.tariff != null);
+    }
+}
+export const getPrice = (duration, tariff, additions, deleteAdd) => {
+    if (duration && tariff) {
+        let totalPrice;
+        if (tariff.unit === "мин") {
+            totalPrice = tariff.price * (duration[0] * 1440 + duration[1] * 60 + duration[2])
+        }
+        if (tariff.unit === "сутки") {
+            if (duration[1] || duration[2]) {
+                totalPrice = tariff.price * (duration[0] + 1);
+            } else {
+                totalPrice = tariff.price * duration[0];
+            }
+        }
+        if (tariff.unit === "7 дней") {
+            totalPrice = tariff.price * Math.ceil((duration[0])/7);
+        }
+        if (tariff.unit === "30 дней") {
+            totalPrice = tariff.price * Math.ceil((duration[0])/30);
+        }
+        if (additions) {
+            additions.map(add => {
+                totalPrice += parseInt((add.split(", ")[1]).split("р")[0])
+            })
+        }
+        if (deleteAdd) {
+            totalPrice -= parseInt((deleteAdd.split(", ")[1]).split("р")[0])
+        }
+        return totalPrice;
     }
 }
 
-export const getDuration = (order) => {
-    let result;
-    if(order.dateFrom && order.dateTo) {
-        let duration = moment.duration(order.dateTo.diff(order.dateFrom));
+
+export const getDuration = (dateFrom, dateTo) => {
+    let result = [null, null, null];
+    if (dateFrom && dateTo) {
+        let duration = moment.duration(dateTo.diff(dateFrom));
         let hours = duration.asHours();
         if (hours > 24) {
             if (duration.asHours() % 24 !== 0) {
-                if(Math.round(duration.asHours()) % 24 === 0) {
-                    result = Math.round(duration.asDays()) + " д ";
-                }
-                else{
-                    result = Math.round(duration.asDays()) + " д " + Math.round(duration.asHours()) % 24 + " ч ";
+                if (Math.round(duration.asHours()) % 24 === 0) {
+                    result[0] = Math.round(duration.asDays());
+                } else {
+                    result[0] = Math.round(duration.asDays());
+                    result[1] = Math.round(duration.asHours()) % 24;
                 }
                 if (Math.round(duration.asMinutes()) % 60 !== 0) {
-                    result=result + Math.round(duration.asMinutes()) % 60 + " мин ";
+                    result[2] = Math.round(duration.asMinutes()) % 60;
                 }
             } else {
-                result = duration.asDays() + " д ";
+                result[0] = duration.asDays();
             }
         } else {
-            result = hours + " ч ";
+            if (Math.round(duration.asMinutes()) % 60 !== 0) {
+                result[2] = Math.round(duration.asMinutes());
+            }
+            if (hours % 24 === 0) {
+                result[1] = hours;
+            }
         }
         return result;
     }
-    return null;
 }

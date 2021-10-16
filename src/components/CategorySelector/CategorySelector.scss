@@ -17,6 +17,7 @@
 
   &.price {
     flex-direction: column;
+    margin-top: 16px;
   }
 
   &_item {
@@ -81,7 +82,7 @@
     }
 
     &_item {
-      margin-left: 16px;
+      margin-left: 20px;
       margin-right: 16px;
       &.carColor {
         &:not(:first-child) {

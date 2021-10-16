@@ -1,3 +1,5 @@
+
+
 export function setStep(step) {
     return {
         type: 'SET_STEP',
@@ -23,6 +25,20 @@ export function setCar(car) {
     return {
         type: 'SET_CAR',
         payload: car
+    }
+}
+
+export function setPrice(price) {
+    return {
+        type: 'SET_PRICE',
+        payload: price
+    }
+}
+
+export function setDuration(duration) {
+    return {
+        type: 'SET_DURATION',
+        payload: duration
     }
 }
 
@@ -82,6 +98,13 @@ export function setApiInfoPoints(point) {
     return {
         type: 'SET_POINTS',
         payload: point
+    }
+}
+
+export function setApiInfoRates(rate) {
+    return {
+        type: 'SET_RATES',
+        payload: rate
     }
 }
 
