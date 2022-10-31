@@ -25,10 +25,10 @@ export const getPrice = (duration, tariff, additions, deleteAdd) => {
             }
         }
         if (tariff.unit === "7 дней") {
-            totalPrice = tariff.price * Math.ceil((duration[0])/7);
+            totalPrice = tariff.price * Math.ceil((duration[0]) / 7);
         }
         if (tariff.unit === "30 дней") {
-            totalPrice = tariff.price * Math.ceil((duration[0])/30);
+            totalPrice = tariff.price * Math.ceil((duration[0]) / 30);
         }
         if (additions) {
             additions.map(add => {
@@ -72,4 +72,51 @@ export const getDuration = (dateFrom, dateTo) => {
         }
         return result;
     }
+}
+
+export const getOrder = (orderStore, status, type) =>{
+    let order;
+    if (type === "post") {
+        order = {
+            orderStatusId: status,
+            cityId: orderStore.city.id,
+            pointId: orderStore.point.id,
+            carId: orderStore.car.id,
+            color: orderStore.color,
+            dateFrom: moment(orderStore.dateFrom).format("x"),
+            dateTo: moment(orderStore.dateTo).format("x"),
+            rateId: orderStore.tariff.id,
+            price: orderStore.price,
+            isFullTank: orderStore.additions.includes("Полный бак, 500р"),
+            isNeedChildChair: orderStore.additions.includes("Детское кресло, 200р"),
+            isRightWheel: orderStore.additions.includes("Правый руль, 1600р")
+        }
+    }
+    if (type === "get") {
+        const adds = orderStore.isFullTank ? ["Полный бак, 500р"] : [];
+        if (orderStore.isNeedChildChair)
+            adds.push("Детское кресло, 200р");
+        if (orderStore.isRightWheel)
+            adds.push("Правый руль, 1600р");
+        order = {
+            city: orderStore.cityId,
+            point: orderStore.pointId,
+            car: orderStore.carId,
+            color: orderStore.color,
+            tariff: {
+                id: orderStore.rateId.id,
+                name: orderStore.rateId.rateTypeId.name + ", " + orderStore.rateId.price + "₽/" + orderStore.rateId.rateTypeId.unit,
+                price: orderStore.rateId.price,
+                unit: orderStore.rateId.rateTypeId.unit
+            },
+            dateFrom: moment(orderStore.dateFrom),
+            dateTo: moment(orderStore.dateTo),
+            duration: getDuration(moment(orderStore.dateFrom), moment(orderStore.dateTo)),
+            additions: adds,
+            price: orderStore.price,
+            orderStatusId: orderStore.orderStatusId,
+            id: orderStore.id
+        }
+    }
+    return order;
 }

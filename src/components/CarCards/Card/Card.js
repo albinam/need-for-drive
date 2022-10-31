@@ -24,6 +24,6 @@ function Card({card, handleClick, selected}) {
 Card.propTypes = {
     card:  PropTypes.object,
     handleClick: PropTypes.func,
-    selected: PropTypes.number
+    selected: PropTypes.string
 }
 export default Card;

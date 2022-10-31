@@ -41,7 +41,7 @@ function LocationMap() {
                     defaultZoom={defaultZoom}>
                     {location.markers.map(obj => {
                         return (
-                            <Marker key={obj.pointId} handleClick={() => handleMarkerChange(obj)} lat={obj.lat}
+                            <Marker key={obj.point.id} handleClick={() => handleMarkerChange(obj)} lat={obj.lat}
                                     lng={obj.lng}/>
                         )
                     })}

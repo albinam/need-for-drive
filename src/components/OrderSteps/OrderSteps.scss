@@ -9,6 +9,12 @@
   border-bottom: 1px solid $color-gray-light;
   width: calc(100vw - 64px);
 
+  .order_text{
+    font-family: $fontBold;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
   &_link {
     font-family: $fontBold;
     font-size: 14px;

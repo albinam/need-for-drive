@@ -1,5 +1,3 @@
-
-
 export function setStep(step) {
     return {
         type: 'SET_STEP',
@@ -88,8 +86,8 @@ export function setCoords(lat, lon) {
     return {
         type: 'SET_COORDS',
         payload: {
-            latitude:lat,
-            longitude:lon,
+            latitude: lat,
+            longitude: lon,
         }
     }
 }
@@ -140,6 +138,17 @@ export function setMarker(marker) {
     return {
         type: 'SET_MARKERS',
         payload: marker
+    }
+}
+
+export const setOrder = (order) => ({
+    type: "SET_ORDER",
+    payload: order
+})
+export const setStatus = (status) => {
+    return {
+        type: "SET_STATUS",
+        payload: status
     }
 }
 

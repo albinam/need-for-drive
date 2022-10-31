@@ -23,6 +23,21 @@
     background: linear-gradient(90deg, darken($color-book-button-start, 20%) 2.61%, darken($color-book-button-end, 20%) 112.6%);
     background-blend-mode: darken;
   }
+
+  &.pink {
+    background: linear-gradient(90deg, $color-btn-slide3-start 0%, $color-btn-slide3-end 100%);
+    background-blend-mode: darken;
+
+    &:hover {
+      background: linear-gradient(90deg, darken($color-btn-slide3-start, 10%) 0%, darken($color-btn-slide3-end, 10%) 100%);
+      background-blend-mode: darken;
+    }
+
+    &:active {
+      background: linear-gradient(90deg, darken($color-btn-slide3-start, 20%) 0%, darken($color-btn-slide3-end, 20%) 100%);
+      background-blend-mode: darken;
+    }
+  }
 }
 
 @media (max-width: $mobileSizeW) {
